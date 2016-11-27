@@ -9,6 +9,7 @@ and (max-width : 580px) {
 
 	.container { width: auto; margin: 0; }
 	.sidebar, .content { float: none; width: auto; overflow: hidden;}
+	.wrapper {float: none; width: 100%;}
 	
 
 	nav > ul > li { float: none; width: auto; margin: 0; }
