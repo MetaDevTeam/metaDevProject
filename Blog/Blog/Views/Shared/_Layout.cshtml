@@ -2,32 +2,42 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>@ViewBag.Title</title>
     <!-- add all css files described in BundleConfig -->
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("SOFTUNI BLOG", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="container">
+        <div class="header">
+            <div class="inner">
+                <div class="logo">
+                    <h1>Eating at home</h1>
+                </div>
+                <div class="right-nav">
+                    <div class="center">
+                        <nav>
+                            <!-- class="nav-collapse" -->
+                            @Html.Partial("_LoginPartial")
+                        </nav>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                @Html.Partial("_LoginPartial")
-            </div>
+            <nav class="nav-collapse">
+                <ul>
+                    <li>@Html.ActionLink("HOME", "Index", "Home", new { area = "" })</li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">All recipes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="main">
         @RenderBody()
-        <footer class="pull-right">
-            <p>&copy; @DateTime.Now.Year - SoftUni Blog</p>
-        </footer>
+    </div>
+    <div class="footer">
+        <p>&copy; @DateTime.Now.Year - MetaDevTeam Blog</p>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -35,5 +45,26 @@
     @Scripts.Render("~/bundles/fancybox")
     @Scripts.Render("~/bundles/responsive-nav")
     @RenderSection("scripts", required: false)
+    <!-- Put this right before the </body> closing tag - move to a js file?-->
+    <script>
+
+			$(document).ready(function() {
+				$(".fancybox").fancybox();
+			});
+
+			var nav = responsiveNav(".nav-collapse", { // Selector
+				animate: true, // Boolean: Use CSS3 transitions, true or false
+				transition: 284, // Integer: Speed of the transition, in milliseconds
+				label: "Menu", // String: Label for the navigation toggle
+				insert: "before", // String: Insert the toggle before or after the navigation
+				openPos: "relative", // String: Position of the opened nav, relative or static
+				navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!
+				navActiveClass: "js-nav-active", // String: Class that is added to  element when nav is active
+				jsClass: "js", // String: 'JS enabled' class which is added to  element
+				init: function(){}, // Function: Init callback
+				open: function(){}, // Function: Open callback
+				close: function(){} // Function: Close callback
+			});
+    </script>
 </body>
 </html>

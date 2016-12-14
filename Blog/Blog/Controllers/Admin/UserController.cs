@@ -181,7 +181,7 @@ namespace Blog.Controllers.Admin
                 return RedirectToAction("List");
             }
 
-            return View();
+            //return View();
         }
 
         private void SetUserRoles(EditUserViewModel viewModel, ApplicationUser user, BlogDbContext db)

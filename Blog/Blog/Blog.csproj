@@ -221,6 +221,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Blog-Design\createnewpost.html" />
+    <Content Include="Blog-Design\index.html" />
+    <Content Include="Blog-Design\indexlogged.html" />
+    <Content Include="Blog-Design\login.html" />
+    <Content Include="Blog-Design\register.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\common.css" />
     <Content Include="Content\forms.css" />

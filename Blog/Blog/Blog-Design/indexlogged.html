@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">	
+		<meta name="viewport" content="width=device-width">
+        <title>Responsive design</title>
+        <link rel="stylesheet" href="../Content/typography.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="../Content/navigation.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="../Content/gallery.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="../Content/common.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="../Content/forms.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="../Content/media.css" type="text/css" charset="utf-8">
+
+		<script src="js/jquery-2.1.1.min.js"></script>
+
+		<!-- Responsive Nav -->
+		<link rel="stylesheet" href="js/responsive-nav/responsive-nav.css">
+		<script src="js/responsive-nav/responsive-nav.js"></script>
+
+		<!-- Fancybox -->
+		<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		
+
+    </head>
+    <body>
+		<div class="container">
+		
+			<div class="header">
+				<div class="inner">
+					<div class="logo">
+						<h1>Eating at home</h1>
+					</div>				
+
+					
+					<div class="right-nav">
+						<div class="center">
+							<nav> <!-- class="nav-collapse" -->
+								<ul>									
+									<li id="search-box">
+										<form>
+	  										<input type="text" name="search" placeholder="SEARCH">
+										</form>
+									</li>	
+									<li><a href="#">Welcome(User)</a></li>				
+									<li><a href="createnewpost.html">New Post</a></li>
+									<li><a href="#">Logout</a></li>																
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				
+					<nav class="nav-collapse">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">All recipes</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				
+			</div>
+			<div class="main">
+				<div class="content">
+					<div class="inner">						
+						<div class="wrapper">
+							<article>
+								<a class="fancybox" rel="group" href="images/Cobb-Salad-004.jpg"><img src="images/Cobb-Salad-004.jpg" /><span></span></a>
+							    <h2>Vegetarian Cobb Salad</h2>
+								<p>This salad has a few components to prepare, but if a few are completed in advance, it’s simple to put together and a fantastic combination of flavors. The star is the coconut bacon: smoky, crispy and rich, against the bite of the blue cheese, the velvety hard-boiled eggs, and the juicy tomatoes...</p>							
+
+								<small class="author">
+	                                Steve Fowler
+	                            </small>
+
+	                            <footer>
+	                                <div class="pull-right">
+	                                    <a href="#">Read more &raquo;</a>
+	                                </div>
+	                            </footer>
+							</article>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar">					
+					<div class="panel">
+						<!-- <div class="cnt"> -->
+							<div class="categories-nav">
+								<header>Categories</header>
+								<ul>
+									<li><a href="#">All Recipes</a></li>
+									<li><a href="#">Main courses</a></li>
+									<li><a href="#">Desserts</a></li>
+									<li><a href="#">Salads</a></li>
+									<li><a href="#">Breakfast</a></li>
+								</ul>
+							</div>
+							<div class="tags-nav">															
+								<header>Popular tags</header>
+								<ul class="tags">
+								  <li><a href="#" class="tag">HTML</a></li>
+								  <li><a href="#" class="tag">CSS</a></li>
+								  <li><a href="#" class="tag">JavaScript</a></li>
+								  <li><a href="#" class="tag">HTML</a></li>
+								  <li><a href="#" class="tag">CSS</a></li>
+								  <li><a href="#" class="tag">JavaScript</a></li>
+								</ul>
+							</div>
+						<!-- </div> -->
+					</div>					
+				</div>
+			</div>
+			<div class="footer">
+			    <p>Copyright &copy; All right resevered.</p>
+			</div>
+
+		</div>
+
+		<!-- Put this right before the </body> closing tag -->
+		<script>
+
+			$(document).ready(function() {
+				$(".fancybox").fancybox();
+			});
+
+			var nav = responsiveNav(".nav-collapse", { // Selector
+				animate: true, // Boolean: Use CSS3 transitions, true or false
+				transition: 284, // Integer: Speed of the transition, in milliseconds
+				label: "Menu", // String: Label for the navigation toggle
+				insert: "before", // String: Insert the toggle before or after the navigation
+				openPos: "relative", // String: Position of the opened nav, relative or static
+				navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!
+				navActiveClass: "js-nav-active", // String: Class that is added to  element when nav is active
+				jsClass: "js", // String: 'JS enabled' class which is added to  element
+				init: function(){}, // Function: Init callback
+				open: function(){}, // Function: Open callback
+				close: function(){} // Function: Close callback
+			});
+		</script>
+    </body>
+</html>
