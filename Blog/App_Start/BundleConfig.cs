@@ -30,15 +30,14 @@ namespace Blog
                       "~/Scripts/responsive-nav/responsive-nav.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
                       "~/Content/common.css",
                       "~/Content/forms.css",
                       "~/Content/gallery.css",
                       "~/Content/jquery.fancybox.css",
-                      "~/Content/jquery.media.css",
-                      "~/Content/jquery.navigation.css",
-                      "~/Content/jquery.responsive-nav.css",
-                      "~/Content/jquery.typography.css"));
+                      "~/Content/media.css",
+                      "~/Content/navigation.css",
+                      "~/Content/responsive-nav.css",
+                      "~/Content/typography.css"));
         }
     }
 }
