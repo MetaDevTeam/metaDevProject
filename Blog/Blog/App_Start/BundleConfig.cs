@@ -24,7 +24,7 @@ namespace Blog
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/fancybox").Include(
-                      "~/Scripts/fancybox/jquery.fancybox.pack.js"));
+                      "~/Scripts/jquery.fancybox/jquery.fancybox.pack.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/responsive-nav").Include(
                       "~/Scripts/responsive-nav/responsive-nav.js"));

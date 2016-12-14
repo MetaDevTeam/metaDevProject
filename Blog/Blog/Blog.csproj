@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Blog-Design\createnewpost.html" />
+    <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
     <Content Include="Blog-Design\indexlogged.html" />
     <Content Include="Blog-Design\login.html" />
@@ -253,7 +254,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.fancybox\jquery.fancybox.pack.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
