@@ -222,20 +222,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\forms.css" />
+    <Content Include="Content\gallery.css" />
+    <Content Include="Content\Images\jquery.fancybox\blank.gif" />
+    <Content Include="Content\Images\jquery.fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\Images\jquery.fancybox\fancybox_loading.gif" />
+    <Content Include="Content\Images\jquery.fancybox\fancybox_overlay.png" />
+    <Content Include="Content\Images\jquery.fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\Images\jquery.fancybox\fancybox_sprite.png" />
+    <Content Include="Content\Images\Recipes\Cobb-Salad-004.jpg" />
+    <Content Include="Content\Images\Recipes\search-box.png" />
+    <Content Include="Content\Images\Recipes\Thanksgiving-009.jpg" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\media.css" />
+    <Content Include="Content\navigation.css" />
+    <Content Include="Content\responsive-nav.css" />
+    <Content Include="Content\typography.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -243,6 +260,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\responsive-nav\responsive-nav.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

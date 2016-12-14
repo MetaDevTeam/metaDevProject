@@ -1,0 +1,58 @@
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 768px) {
+	.container { width: auto; margin: 0; }
+}
+
+@media only screen 
+and (max-width : 580px) {
+
+	.container { width: auto; margin: 0; }
+	.sidebar, .content { float: none; width: auto; overflow: hidden;}
+	.wrapper {float: none; width: 100%;}
+	
+
+	nav > ul > li { float: none; width: auto; margin: 0; }
+	nav > ul > li > a {  }
+
+	.nav-toggle {background: #5c748e; border: 1px solid #D0D0D0; box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.1); }
+	.nav-toggle.active { margin-bottom: 0; background: #5c748e; color: #FFF;  }
+	.nav-toggle:hover,
+	nav ul li a:hover { color: #fff; background: #5c748e;}
+
+	.right-nav nav {padding-bottom: 0;}
+	.right-nav nav ul li a { color: #a49a9a; background: #f3f3f3; border: none; box-shadow: none; margin-bottom: 1em; }
+
+	.panel {padding-left: 0; padding-top: 2em;}
+
+	.header .inner .logo {width: 100%; text-align: center; margin-top: 1em;}
+	.header .inner .logo h1 {margin-bottom: 0;}
+	.header .inner .right-nav  {width: 100%; text-align: center;}
+	.header .inner .right-nav 
+	.center {display: inline-block; text-align: center; }
+	
+
+}
+
+@media only screen 
+and (max-width : 360px) {
+	body { font-size: 8px; }
+
+	form .input label {float: none; width: 100%; text-align: left;}
+	
+	form.compact p.input {padding-bottom: 0.5em;}
+
+	form.compact .buttons { padding-left: 0; }
+	form .input input,
+	form .input textarea { width: 100%; }
+
+	form .input input,
+	form .input textarea,
+	form label,
+	form h3,
+	form .buttons input
+	 { font-size: 8px; }
+
+}
+
+
