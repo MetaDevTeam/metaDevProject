@@ -47,5 +47,24 @@ namespace Blog.Controllers
                 return View(articles);
             }
         }
+
+        public ActionResult ListRecipes(int? categoryId)
+        {
+            if (categoryId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            using (var db = new BlogDbContext())
+            {
+                var recipes = db.Recipes
+                    .Where(a => a.CategoryId == categoryId)
+                    .Include(a => a.Author)
+                    .Include(a => a.Tags)
+                    .ToList();
+
+                return View(recipes);
+            }
+        }
     }
 }
