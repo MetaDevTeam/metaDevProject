@@ -48,7 +48,7 @@ namespace Blog.Controllers
 
             using (var database = new BlogDbContext())
             {
-                var recipe = database.Articles
+                var recipe = database.Recipes
                     .Where(a => a.Id == id)
                     .Include(a => a.Author)
                     .Include(a => a.Tags)
@@ -70,7 +70,7 @@ namespace Blog.Controllers
         {
             using (var db = new BlogDbContext())
             {
-                var model = new ArticleViewModel();
+                var model = new RecipeViewModel();
                 model.Categories = db.Categories
                     .OrderBy(c => c.Name)
                     .ToList();
