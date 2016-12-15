@@ -16,12 +16,12 @@ namespace Blog.Models
             this.tags = new HashSet<Tag>();
         }
 
-        public Recipe(string authorId, string title, string context, int categoryId)
+        public Recipe(string authorId, string title, string context, int recipeCategoryId)
         {
             this.AuthorId = authorId;
             this.Title = title;
             this.Content = context;
-            this.CategoryId = categoryId;
+            this.RecipeCategoryId = recipeCategoryId;
             this.tags = new HashSet<Tag>();
         }
 
@@ -40,10 +40,10 @@ namespace Blog.Models
 
         public virtual ApplicationUser Author { get; set; }
 
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
+        [ForeignKey("RecipeCategory")]
+        public int RecipeCategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual RecipeCategory RecipeCategory { get; set; }
 
         public bool IsAuthor(string name)
         {

@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AplicationUser.cs" />
     <Compile Include="Controllers\Admin\CategoryController.cs" />
+    <Compile Include="Controllers\Admin\RecipeCategoryController.cs" />
     <Compile Include="Controllers\Admin\UserController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Models\EditUserViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeCategory.cs" />
     <Compile Include="Models\RecipeViewModel.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Tag.cs" />

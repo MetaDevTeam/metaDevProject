@@ -58,7 +58,7 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 var recipes = db.Recipes
-                    .Where(a => a.CategoryId == categoryId)
+                    .Where(a => a.RecipeCategoryId == categoryId)
                     .Include(a => a.Author)
                     .Include(a => a.Tags)
                     .ToList();

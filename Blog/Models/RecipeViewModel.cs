@@ -20,12 +20,13 @@ namespace Blog.Models
         public string AuthorId { get; set; }
 
         [Required]
-        [Display(Name = "Category")]
-        public int CategoryId { get; set; }
+        [Display(Name = "RecipeCategory")]
+        public int RecipeCategoryId { get; set; }
 
         public string Tags { get; set; }
 
         public ICollection<Recipe> Ricepes { get; set; }
-        public List<Category> Categories { get; set; }
+
+        public List<RecipeCategory> RecipeCategories { get; set; }
     }
 }
