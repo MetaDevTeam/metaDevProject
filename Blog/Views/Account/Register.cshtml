@@ -13,20 +13,20 @@
                         <hr />
                         @Html.ValidationSummary("", new { @class = "text-danger" })
                         <p class="input">
-                            @Html.LabelFor(m => m.Email, new { @class = "col-sm-4 control-label" })
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.Email)
+                            @Html.TextBoxFor(m => m.Email)
                         </p>
                         <p class="input required">
-                            @Html.LabelFor(m => m.FullName, new { @class = "col-sm-4 control-label" })
-                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.FullName)
+                            @Html.TextBoxFor(m => m.FullName)
                         </p>
                         <p class="input required">
                             @Html.LabelFor(m => m.Password)
                             @Html.PasswordFor(m => m.Password)                           
                         </p>
                         <p class="input required">
-                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-sm-4 control-label" })
-                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            @Html.PasswordFor(m => m.ConfirmPassword)
                         </p>
                         <div class="buttons">
                             <input type="submit" value="Register" class="button"/>
