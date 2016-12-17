@@ -1,62 +1,61 @@
-﻿using System;
+﻿using Blog.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Blog.Models;
 
 namespace Blog.Controllers.Admin
 {
     [Authorize(Roles = "Admin")]
-    public class CategoryController : Controller
+    public class RecipeCategoryController : Controller
     {
         private BlogDbContext db = new BlogDbContext();
 
-        // GET: Category
+        // GET: RecipeCategory
         public ActionResult Index()
         {
             return RedirectToAction("List");
         }
 
-        // GET: Category/List
+        // GET: RecipeCategory/List
         public ActionResult List()
         {
             using (var db = new BlogDbContext())
             {
-                var caregories = db.Categories
+                var recipeCaregories = db.RecipeCategories
                     .ToList();
 
-                return View(caregories);
+                return View(recipeCaregories);
             }
         }
 
-        // GET: Category/Create
+        // GET: RecipeCategory/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Category/Create
+        // POST: RecipeCategory/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name")] Category category)
+        public ActionResult Create([Bind(Include = "id,name")] RecipeCategory recipeCategory)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.RecipeCategories.Add(recipeCategory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            return View(recipeCategory);
         }
 
-        // GET: Category/Edit/5
+        // GET: RecipeCategory/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -66,36 +65,36 @@ namespace Blog.Controllers.Admin
 
             using (var db = new BlogDbContext())
             {
-                var category = db.Categories
+                var recipeCategory = db.RecipeCategories
                     .FirstOrDefault(c => c.id == id);
 
-                if (category == null)
+                if (recipeCategory == null)
                 {
                     return HttpNotFound();
                 }
 
-                return View(category);
+                return View(recipeCategory);
             }
         }
 
-        // POST: Category/Edit
+        // POST: RecipeCategory/Edit
         [HttpPost]
-        public ActionResult Edit(Category category)
+        public ActionResult Edit(RecipeCategory recipeCategory)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new BlogDbContext())
                 {
-                    db.Entry(category).State = EntityState.Modified;
+                    db.Entry(recipeCategory).State = EntityState.Modified;
                     db.SaveChanges();
 
                     return RedirectToAction("Index");
                 }
             }
-            return View(category);
+            return View(recipeCategory);
         }
 
-        // GET: Category/Delete
+        // GET: RecipeCategory/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,37 +104,37 @@ namespace Blog.Controllers.Admin
 
             using (var db = new BlogDbContext())
             {
-                var category = db.Categories
+                var recipeCategory = db.RecipeCategories
                        .FirstOrDefault(c => c.id == id);
 
-                if (category == null)
+                if (recipeCategory == null)
                 {
                     return HttpNotFound();
                 }
 
-                return View(category);
+                return View(recipeCategory);
             }
         }
 
-        // POST: Category/Delete
+        // POST: RecipeCategory/Delete
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
             using (var db = new BlogDbContext())
             {
-                var category = db.Categories
+                var recipeCategory = db.RecipeCategories
                        .FirstOrDefault(c => c.id == id);
 
-                var categoryArticles = category.Articles
+                var categoryReci = recipeCategory.Recipes
                     .ToList();
 
-                foreach (var article in categoryArticles)
+                foreach (var recipe in categoryReci)
                 {
-                    db.Articles.Remove(article);
+                    db.Recipes.Remove(recipe);
                 }
 
-                db.Categories.Remove(category);
+                db.RecipeCategories.Remove(recipeCategory);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
