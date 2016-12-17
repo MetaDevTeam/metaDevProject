@@ -204,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\RecipeTagController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -219,6 +220,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeCategory.cs" />
+    <Compile Include="Models\RecipeTag.cs" />
     <Compile Include="Models\RecipeViewModel.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -328,10 +330,16 @@
     <Content Include="Views\Recipe\Details.cshtml" />
     <Content Include="Views\Recipe\Edit.cshtml" />
     <Content Include="Views\Recipe\List.cshtml" />
+    <Content Include="Views\Home\ListRecipes.cshtml" />
+    <Content Include="Views\Home\ListRecipeCategories.cshtml" />
+    <Content Include="Views\RecipeCategory\Create.cshtml" />
+    <Content Include="Views\RecipeCategory\Delete.cshtml" />
+    <Content Include="Views\RecipeCategory\Edit.cshtml" />
+    <Content Include="Views\RecipeCategory\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\RecipeCategory\" />
+    <Folder Include="Views\RecipeTag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

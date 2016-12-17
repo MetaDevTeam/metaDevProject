@@ -23,7 +23,7 @@ namespace Blog.Models
         [Display(Name = "RecipeCategory")]
         public int RecipeCategoryId { get; set; }
 
-        public string Tags { get; set; }
+        public string RecipeTags { get; set; }
 
         public ICollection<Recipe> Ricepes { get; set; }
 

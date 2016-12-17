@@ -30,9 +30,9 @@ namespace Blog.Controllers
         {
             using (var database = new BlogDbContext())
             {
-                var recipes = database.Articles
+                var recipes = database.Recipes
                     .Include(a => a.Author)
-                    .Include(a => a.Tags)
+                    .Include(a => a.RecipeTags)
                     .ToList();
 
                 return View(recipes);
@@ -51,7 +51,7 @@ namespace Blog.Controllers
                 var recipe = database.Recipes
                     .Where(a => a.Id == id)
                     .Include(a => a.Author)
-                    .Include(a => a.Tags)
+                    .Include(a => a.RecipeTags)
                     .First();
 
                 if (recipe == null)
@@ -71,7 +71,7 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 var model = new RecipeViewModel();
-                model.Categories = db.Categories
+                model.RecipeCategories = db.RecipeCategories
                     .OrderBy(c => c.Name)
                     .ToList();
 
@@ -98,7 +98,7 @@ namespace Blog.Controllers
                         authorId,
                         model.Title,
                         model.Content,
-                        model.CategoryId);
+                        model.RecipeCategoryId);
 
                     this.SetRecipeTags(recipe, model, db);
                     //Set recipes author
@@ -128,7 +128,7 @@ namespace Blog.Controllers
                 var recipe = database.Recipes
                     .Where(a => a.Id == id)
                     .Include(a => a.Author)
-                    .Include(a => a.Category)
+                    .Include(a => a.RecipeCategory)
                     .First();
 
                 if (!IsUserAuthorizedToEdit(recipe))
@@ -136,7 +136,7 @@ namespace Blog.Controllers
                     return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
                 }
 
-                ViewBag.TagsString = string.Join(", ", recipe.Tags.Select(t => t.Name));
+                ViewBag.TagsString = string.Join(", ", recipe.RecipeTags.Select(t => t.Name));
 
                 //Check if recipe exists
                 if (recipe == null)
@@ -209,16 +209,16 @@ namespace Blog.Controllers
                 }
 
                 //Create the view model
-                var model = new ArticleViewModel();
+                var model = new RecipeViewModel();
                 model.Id = recipe.Id;
                 model.Title = recipe.Title;
                 model.Content = recipe.Content;
-                model.CategoryId = recipe.CategoryId;
-                model.Categories = db.Categories
+                model.RecipeCategoryId = recipe.RecipeCategoryId;
+                model.RecipeCategories = db.RecipeCategories
                     .OrderBy(c => c.Name)
                     .ToList();
 
-                model.Tags = string.Join(", ", recipe.Tags.Select(t => t.Name));
+                model.RecipeTags = string.Join(", ", recipe.RecipeTags.Select(t => t.Name));
 
                 //Pass the view model to view
                 return View(model);
@@ -241,7 +241,7 @@ namespace Blog.Controllers
                     //Set article properties
                     recipe.Title = model.Title;
                     recipe.Content = model.Content;
-                    recipe.CategoryId = model.CategoryId;
+                    recipe.RecipeCategoryId = model.RecipeCategoryId;
                     this.SetRecipeTags(recipe, model, database);
 
                     //Save recipe state in database
@@ -260,29 +260,29 @@ namespace Blog.Controllers
         private void SetRecipeTags(Recipe recipe, RecipeViewModel model, BlogDbContext db)
         {
             // Split tags
-            var tagsStrings = model.Tags
+            var tagsStrings = model.RecipeTags
                 .Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(t => t.ToLower())
                 .Distinct();
 
             // Clear all current article tags
-            recipe.Tags.Clear();
+            recipe.RecipeTags.Clear();
 
             // Set new article tags
             foreach (var tagString in tagsStrings)
             {
                 // Get tagfrom db by its name
-                Tag tag = db.Tags.FirstOrDefault(t => t.Name.Equals(tagString));
+                RecipeTag recipeTag = db.RecipeTags.FirstOrDefault(t => t.Name.Equals(tagString));
 
                 // If the tag is null, create new tag
-                if (tag == null)
+                if (recipeTag == null)
                 {
-                    tag = new Tag() { Name = tagString };
-                    db.Tags.Add(tag);
+                    recipeTag = new RecipeTag() { Name = tagString };
+                    db.RecipeTags.Add(recipeTag);
                 }
 
                 // Add tag to article tags
-                recipe.Tags.Add(tag);
+                recipe.RecipeTags.Add(recipeTag);
             }
         }
     }

@@ -9,11 +9,11 @@ namespace Blog.Models
 {
     public class Recipe
     {
-        private ICollection<Tag> tags;
+        private ICollection<RecipeTag> recipeTags;
 
         public Recipe()
         {
-            this.tags = new HashSet<Tag>();
+            this.recipeTags = new HashSet<RecipeTag>();
         }
 
         public Recipe(string authorId, string title, string context, int recipeCategoryId)
@@ -22,7 +22,7 @@ namespace Blog.Models
             this.Title = title;
             this.Content = context;
             this.RecipeCategoryId = recipeCategoryId;
-            this.tags = new HashSet<Tag>();
+            this.recipeTags = new HashSet<RecipeTag>();
         }
 
         [Key]
@@ -50,10 +50,10 @@ namespace Blog.Models
             return this.Author.UserName.Equals(name);
         }
 
-        public virtual ICollection<Tag> Tags
+        public virtual ICollection<RecipeTag> RecipeTags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this.recipeTags; }
+            set { this.recipeTags = value; }
         }
     }
 }
