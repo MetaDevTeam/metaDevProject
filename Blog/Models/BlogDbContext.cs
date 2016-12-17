@@ -16,9 +16,15 @@ namespace Blog.Models
 
         public virtual IDbSet<Article> Articles { get; set; }
 
+        public virtual IDbSet<Recipe> Recipes { get; set; }
+
+        public virtual IDbSet<RecipeCategory> RecipeCategories { get; set; }
+
         public virtual IDbSet<Category> Categories { get; set; }
 
         public virtual IDbSet<Tag> Tags { get; set; }
+
+        public virtual IDbSet<RecipeTag> RecipeTags { get; set; }
 
         public static BlogDbContext Create()
         {

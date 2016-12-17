@@ -13,7 +13,7 @@ namespace Blog.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("ListCategories");
+            return RedirectToAction("ListRecipeCategories");
         }
 
         public ActionResult ListCategories()
@@ -45,6 +45,38 @@ namespace Blog.Controllers
                     .ToList();
 
                 return View(articles);
+            }
+        }
+
+        public ActionResult ListRecipes(int? categoryId)
+        {
+            if (categoryId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            using (var db = new BlogDbContext())
+            {
+                var recipes = db.Recipes
+                    .Where(a => a.RecipeCategoryId == categoryId)
+                    .Include(a => a.Author)
+                    .Include(a => a.RecipeTags)
+                    .ToList();
+
+                return View(recipes);
+            }
+        }
+
+        public ActionResult ListRecipeCategories()
+        {
+            using (var db = new BlogDbContext())
+            {
+                var recipeCategories = db.RecipeCategories
+                    .Include(c => c.Recipes)
+                    .OrderBy(c => c.Name)
+                    .ToList();
+
+                return View(recipeCategories);
             }
         }
     }
