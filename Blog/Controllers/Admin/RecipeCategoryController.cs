@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Blog.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class RecipeCategoryController : Controller
     {
         private BlogDbContext db = new BlogDbContext();
