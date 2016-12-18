@@ -13,7 +13,7 @@
             <div class="inner">
                 <div class="logo">
                     <h1>Eating at home</h1>
-                </div>bou
+                </div>
                 <div class="right-nav">
                     <div class="center">
                         <nav>
@@ -27,13 +27,41 @@
                 <ul>
                     <li>@Html.ActionLink("HOME", "Index", "Home")</li>
                     <li>@Html.ActionLink("ABOUT", "Index", "About")</li>     
-                    <li><a href="#">All recipes</a></li>
+                    <li>@Html.ActionLink("RECIPES", "Index", "Recipe/List")</li>
+                    <li>@Html.ActionLink("BLOG", "Index", "Article/List")</li>
                     <li>@Html.ActionLink("CONTACT", "Index", "Contact")</li>     
                 </ul>
             </nav>
         </div>
         <div class="main">
             @RenderBody()
+            <div class="sidebar">
+                <div class="panel">
+                    <!-- <div class="cnt"> -->
+                    <div class="categories-nav">
+                        <header>Categories</header>
+                        <ul>
+                            <li><a href="#">All Recipes</a></li>
+                            <li><a href="#">Main courses</a></li>
+                            <li><a href="#">Desserts</a></li>
+                            <li><a href="#">Salads</a></li>
+                            <li><a href="#">Breakfast</a></li>
+                        </ul>
+                    </div>
+                    <div class="tags-nav">
+                        <header>Popular tags</header>
+                        <ul class="tags">
+                            <li><a href="#" class="tag">HTML</a></li>
+                            <li><a href="#" class="tag">CSS</a></li>
+                            <li><a href="#" class="tag">JavaScript</a></li>
+                            <li><a href="#" class="tag">HTML</a></li>
+                            <li><a href="#" class="tag">CSS</a></li>
+                            <li><a href="#" class="tag">JavaScript</a></li>
+                        </ul>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
         </div>
         
         <div class="footer">

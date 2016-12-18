@@ -4,17 +4,18 @@
     ViewBag.Title = "List";
 }
 
-<div class="container">
-    <div class="row">
+<div class="content">
+    <div class="inner">
         @foreach (var recipe in Model)
         {
-            <div class="col-sm-6">
+            <div class="wrapper">
                 <article>
-                    <header>
-                        <h2>
-                            @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
-                        </h2>
-                    </header>
+                    <a href="@Url.Action("Details", "Recipe")" title="@recipe.Title" class="fancybox">
+                        <img alt="@recipe.Title" src="@Url.Content("../Content/Images/Recipes/Thanksgiving-009.jpg")">
+                    </a>
+                    <h2>
+                        @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
+                    </h2>
                     <p>
                         @recipe.Content
                     </p>
@@ -34,4 +35,3 @@
         }
     </div>
 </div>
-<hr />
