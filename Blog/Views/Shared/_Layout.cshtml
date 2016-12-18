@@ -13,7 +13,7 @@
             <div class="inner">
                 <div class="logo">
                     <h1>Eating at home</h1>
-                </div>
+                </div>bou
                 <div class="right-nav">
                     <div class="center">
                         <nav>
@@ -25,10 +25,10 @@
             </div>
             <nav class="nav-collapse">
                 <ul>
-                    <li>@Html.ActionLink("HOME", "Index", "Home", new { area = "" })</li>
-                    <li><a href="#">About</a></li>
+                    <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                    <li>@Html.ActionLink("ABOUT", "Index", "About")</li>     
                     <li><a href="#">All recipes</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>@Html.ActionLink("CONTACT", "Index", "Contact")</li>     
                 </ul>
             </nav>
         </div>
