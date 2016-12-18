@@ -1,0 +1,23 @@
+﻿@model Blog.Models.RecipeCategory
+
+@{
+    ViewBag.Title = "Edit Recipe Category";
+}
+
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Edit", "RecipeCategory", FormMethod.Post, new { @class = "compact" }))
+        {
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </p>
+
+            <div class="buttons">
+                    @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "button" })
+                    <input type="submit" value="Edit" class="button" />
+            </div>
+        }
+    </div>
+</div>

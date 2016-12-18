@@ -1,0 +1,40 @@
+﻿@model Blog.Models.RecipeViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "compact" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("")
+
+            <h3>Create Recipe</h3>
+			<p class="input">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title)
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @rows = "7" })
+            </p>
+
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeCategoryId)
+                @Html.DropDownListFor(m => m.RecipeCategoryId,
+                new SelectList(Model.RecipeCategories, "Id", "Name"))                
+            </p>
+
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeTags)
+                @Html.TextBoxFor(m => m.RecipeTags)
+            </p>
+            <p class="buttons">
+                    @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
+                    <input type="submit" value="Create" class="button" />
+            </p>
+        }
+    </div>
+</div>

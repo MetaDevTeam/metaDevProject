@@ -1,0 +1,37 @@
+﻿
+@model Blog.Models.Recipe
+
+@{
+    ViewBag.Title = "Delete Recipe";
+}
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Delete", "Recipe", FormMethod.Post, new { @class = "compact" }))
+        {
+            @Html.AntiForgeryToken()
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @readonly = "readonly", @rows = "7" })
+            </p>
+
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeCategory)
+                @Html.TextBoxFor(m => m.RecipeCategory.Name, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeTags)
+                @Html.TextBox("tagsString", (object)ViewBag.TagsString, new { @readonly = "readonly" })
+            </p>
+            <div class="buttons">
+                @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
+                <input type="submit" value="Delete" class="button" />
+            </div>
+        }
+    </div>
+</div>
+

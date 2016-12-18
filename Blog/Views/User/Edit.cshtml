@@ -1,60 +1,49 @@
 ﻿@model Blog.Models.EditUserViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit User";
 }
 
-<div class="container">
-    <div class="well">
-        <h2>Edit User</h2>
-        @Html.ValidationSummary()
-        @Html.AntiForgeryToken()
-
-        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "compact" }))
         {
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                </div>
-            </div>
+            @Html.ValidationSummary()
+            @Html.AntiForgeryToken()
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+            </P>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.FullName, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
-                </div>
-            </div>
+            <p class="input">
+                @Html.LabelFor(m => m.FullName)
+                @Html.TextBoxFor(m => m.FullName)
+            </p>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
-                </div>
-            </div>
+            <p class="input">
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password)
+            </p>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                </div>
-            </div>
+            <p class="input">
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.TextBoxFor(m => m.ConfirmPassword)
+            </p>
 
-            <div class="form-group">
+            <p class="input">
                 @for (int i = 0; i < Model.Roles.Count; i++)
                 {
-                    <div class="col-sm-offset-4 col-sm-4">
+                    <p>
                         @Html.HiddenFor(m => m.Roles[i].Name)
                         @Html.CheckBoxFor(m => m.Roles[i].IsSelected)
                         @Model.Roles[i].Name
-                    </div>
+                    </p>
                 }
-            </div>
+            </p>
 
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    <input type="submit" value="Edit" class="btn btn-success" />
-                </div>
+            <div class="buttons">
+                <input type="submit" value="Edit" class="button" />
             </div>
         }
     </div>

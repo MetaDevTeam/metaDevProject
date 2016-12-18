@@ -199,11 +199,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AplicationUser.cs" />
     <Compile Include="Controllers\Admin\CategoryController.cs" />
+    <Compile Include="Controllers\Admin\RecipeCategoryController.cs" />
     <Compile Include="Controllers\Admin\UserController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\RecipeTagController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +220,10 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\EditUserViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeCategory.cs" />
+    <Compile Include="Models\RecipeTag.cs" />
+    <Compile Include="Models\RecipeViewModel.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -324,11 +331,23 @@
     <Content Include="Views\Home\ListCategories.cshtml" />
     <Content Include="Views\Home\ListArticles.cshtml" />
     <Content Include="Views\Tag\ListArticlesByTag.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
+	<Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Recipe\Delete.cshtml" />
+    <Content Include="Views\Recipe\Details.cshtml" />
+    <Content Include="Views\Recipe\Edit.cshtml" />
+    <Content Include="Views\Recipe\List.cshtml" />
+    <Content Include="Views\Home\ListRecipes.cshtml" />
+    <Content Include="Views\Home\ListRecipeCategories.cshtml" />
+    <Content Include="Views\RecipeCategory\Create.cshtml" />
+    <Content Include="Views\RecipeCategory\Delete.cshtml" />
+    <Content Include="Views\RecipeCategory\Edit.cshtml" />
+    <Content Include="Views\RecipeCategory\List.cshtml" />
+	<Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\RecipeTag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

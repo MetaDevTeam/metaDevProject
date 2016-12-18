@@ -10,6 +10,7 @@ using Blog.Models;
 
 namespace Blog.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private BlogDbContext db = new BlogDbContext();

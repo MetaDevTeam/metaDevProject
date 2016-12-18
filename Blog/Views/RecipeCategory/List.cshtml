@@ -1,0 +1,35 @@
+﻿@model List<Blog.Models.RecipeCategory>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+    <div class="well">
+        <h2>All Recipe Categories - @Html.ActionLink("Create", "Create", "RecipeCategory", null, new { @class = "btn btn-warning" })</h2>
+        <div class="row">
+            <table class="table table-striped table-hover col-sm-12">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var recipeCategory in Model)
+                    {
+                        <tr>
+                            <td>@recipeCategory.id</td>
+                            <td>@recipeCategory.Name</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "RecipeCategory", new { @id = recipeCategory.id }, null)
+                                @Html.ActionLink("Delete", "Delete", "RecipeCategory", new { @id = recipeCategory.id }, null)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

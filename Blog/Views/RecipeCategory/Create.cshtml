@@ -1,0 +1,31 @@
+﻿@model Blog.Models.RecipeCategory
+
+@{
+    ViewBag.Title = "Create Recipe Category";
+}
+
+<div class="content">
+    <div class="inner">        
+        @using (Html.BeginForm("Create", "RecipeCategory", FormMethod.Post, new { @class = "compact" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(model => model.Name)
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, "")
+            </p>
+
+            <div class="buttons">
+                @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "button" })
+                <input type="submit" value="Create" class="button" />
+            </div>
+
+            <p>
+                @Html.ActionLink("<< Back to List", "Index")
+            </p>
+        }
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model Blog.Models.RecipeViewModel
+
+@{
+    ViewBag.Title = "Edit Recipe";
+}
+
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Edit", "Recipe", FormMethod.Post, new { @class = "compact" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.AuthorId)
+
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title)
+            </p>
+
+            <p class="input">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @rows = "7" })
+            </p>
+
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeCategoryId)
+                @Html.DropDownListFor(m => m.RecipeCategoryId,
+                        new SelectList(Model.RecipeCategories, "Id", "Name", Model.RecipeCategoryId),
+                        new { @class = "button" })
+            </p>
+            
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeTags)
+                @Html.TextBoxFor(m => m.RecipeTags)
+            </p>
+
+            <div class="buttons">
+                @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
+                <input type="submit" value="Edit" class="button" />
+            </div>
+        }
+    </div>
+</div>
