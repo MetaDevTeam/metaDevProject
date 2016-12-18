@@ -1,26 +1,22 @@
 ﻿@model Blog.Models.RecipeCategory
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Recipe Category";
 }
 
-<div class="container">
-    <div class="well">
-        <h2>Edit Recipe Category</h2>
-        @using (Html.BeginForm("Edit", "RecipeCategory", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Edit", "RecipeCategory", FormMethod.Post, new { @class = "compact" }))
         {
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                </div>
-            </div>
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </p>
 
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "btn btn-default" })
-                    <input type="submit" value="Edit" class="btn btn-success" />
-                </div>
+            <div class="buttons">
+                    @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "button" })
+                    <input type="submit" value="Edit" class="button" />
             </div>
         }
     </div>

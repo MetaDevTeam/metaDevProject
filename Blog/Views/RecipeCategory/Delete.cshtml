@@ -1,25 +1,21 @@
 ﻿@model Blog.Models.RecipeCategory
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Recipe Category";
 }
 
-<div class="container">
-    <div class="well">
-        <h2>Delete Recipe Category</h2>
-        @using (Html.BeginForm("Delete", "RecipeCategory", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Delete", "RecipeCategory", FormMethod.Post, new { @class = "compact" }))
         {
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4 ">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @readonly = "readonly" })
-                </div>
-            </div>
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @readonly = "readonly" })
+            </p>
 
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "btn btn-default" })
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-                </div>
+            <div class="buttons">
+                @Html.ActionLink("Cancel", "List", "RecipeCategory", new { @class = "button" })
+                <input type="submit" value="Delete" class="button" />
             </div>
         }
     </div>
