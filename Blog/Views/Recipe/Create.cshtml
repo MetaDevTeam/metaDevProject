@@ -4,49 +4,37 @@
     ViewBag.Title = "Create";
 }
 
-<div class="container">
-    <div class="well">
-        <h2>Create Recipe</h2>
-        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "compact" }))
         {
             @Html.AntiForgeryToken()
-            @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.ValidationSummary("")
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.Title, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Content, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextAreaFor(m => m.Content, new { @class = "form-control", @rows = "7" })
-                </div>
-            </div>
+            <h3>Create Recipe</h3>
+			<p class="input">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title)
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @rows = "7" })
+            </p>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.RecipeCategoryId, new { @class = "col-sm-4 control-label" })
-                <div class="dropdown col-sm-4">
-                    @Html.DropDownListFor(m => m.RecipeCategoryId,
-                        new SelectList(Model.RecipeCategories, "Id", "Name"),
-                        new { @class = "btn btn-info col-sm-12" })
-                </div>
-            </div>
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeCategoryId)
+                @Html.DropDownListFor(m => m.RecipeCategoryId,
+                new SelectList(Model.RecipeCategories, "Id", "Name"))                
+            </p>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.RecipeTags, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.RecipeTags, new { @class = "form-control col-sm-4" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "btn btn-default" })
-                    <input type="submit" value="Create" class="btn btn-success" />
-                </div>
-            </div>
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeTags)
+                @Html.TextBoxFor(m => m.RecipeTags)
+            </p>
+            <p class="buttons">
+                    @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
+                    <input type="submit" value="Create" class="button" />
+            </p>
         }
     </div>
 </div>

@@ -1,17 +1,17 @@
 ﻿@model Blog.Models.ArticleViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Article";
 }
 
 <div class="content">
     <div class="inner">
-        @using (Html.BeginForm("Create", "Article", FormMethod.Post))
+        @using (Html.BeginForm("Create", "Article", FormMethod.Post, new { @class = "compact" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
 
-            <h3>Create Article</h3>
+            <h3>@ViewBag.Title</h3>
             <p class="input">
                 @Html.LabelFor(m => m.Title)
                 @Html.TextBoxFor(m => m.Title)

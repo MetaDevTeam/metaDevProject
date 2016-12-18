@@ -2,48 +2,34 @@
 @model Blog.Models.Recipe
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Recipe";
 }
-
-<div class="container">
-    <div class="well">
-        <h2>Delete Recipe</h2>
-        @using (Html.BeginForm("Delete", "Recipe", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Delete", "Recipe", FormMethod.Post, new { @class = "compact" }))
         {
             @Html.AntiForgeryToken()
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @readonly = "readonly", @rows = "7" })
+            </p>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.Title, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @readonly = "readonly" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Content, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextAreaFor(m => m.Content, new { @class = "form-control", @readonly = "readonly", @rows = "7" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.RecipeCategory, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.RecipeCategory.Name, new { @class = "form-control", @readonly = "readonly" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.RecipeTags, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBox("tagsString", (object)ViewBag.TagsString, new { @class = "form-control", @readonly = "readonly" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "btn btn-default" })
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-                </div>
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeCategory)
+                @Html.TextBoxFor(m => m.RecipeCategory.Name, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.RecipeTags)
+                @Html.TextBox("tagsString", (object)ViewBag.TagsString, new { @readonly = "readonly" })
+            </p>
+            <div class="buttons">
+                @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
+                <input type="submit" value="Delete" class="button" />
             </div>
         }
     </div>
