@@ -6,7 +6,7 @@
     <title>Responsive design</title>
     <link rel="stylesheet" href="../Content/typography.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/navigation.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="../Content/gallery.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="../Content/admin-user-panel.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/common.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/forms.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/media.css" type="text/css" charset="utf-8">
@@ -60,38 +60,47 @@
         <div class="main">
             <div class="content">
                 <div class="inner">
-<div class="well">
-        <h2>All Recipe Categories - <a class="btn btn-warning" href="/RecipeCategory/Create">Create</a></h2>
-        <div class="row">
-            <table class="table table-striped table-hover col-sm-12">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Test</td>
-                            <td>
-                                <a href="/RecipeCategory/Edit/1">Edit</a>
-                                <a href="/RecipeCategory/Delete/1">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Test2</td>
-                            <td>
-                                <a href="/RecipeCategory/Edit/2">Edit</a>
-                                <a href="/RecipeCategory/Delete/2">Delete</a>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                    <div class="categories-create">
+                        <h2>All Recipe Categories</h2>
+
+                        <div class="top-button">
+                            <input type="submit" value="Create Category" class="button">
+                        </div>
+
+                        <div class="row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Test</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Test2</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="sidebar">

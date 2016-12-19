@@ -1,0 +1,20 @@
+
+/*All Recipe Categories*/
+.categories-create {
+    margin: 1em 4em 4em 4em;
+}
+.button { display: block; border: none; padding: 0.5em 1em; background: #0077A5; color: #fff;
+    cursor: pointer; border: 1px solid #006288; border-radius: 2px; margin-bottom: 1em; box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24); }
+.button:hover { background: #115771; }
+
+.buttons { overflow: hidden; }
+.buttons .button { float: left; margin-right: 1em; margin-bottom: 0; }
+
+table thead tr th:first-child{
+    width: 5em;
+}
+
+
+
+
+
