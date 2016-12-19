@@ -20,12 +20,12 @@
                         @recipe.Content
                     </p>
                     <footer>
-                        <div class="pull-left">
+                        <ul class="tags">
                             @foreach (var tag in recipe.RecipeTags)
                             {
-                                @Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "btn btn-default btn-xs" })
+                                <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                             }
-                        </div>
+                        </ul>
                         <small class="author pull-right">
                             --author @recipe.Author.FullName
                         </small>

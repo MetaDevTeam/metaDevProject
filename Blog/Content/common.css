@@ -135,7 +135,19 @@ article footer .pull-right {float: right; margin-right: 2em;}
 
 .tag:hover::after {
    border-left-color: crimson; 
-}	
+}
+
+
+
+.tag-article {
+  background: #5c748e;
+  color: #fff;
+}
+
+.tag-article::after {
+  background: #fff;
+  border-left-color: #5c748e;
+}
 
 
 /*----SEARCH-BOX----*/
