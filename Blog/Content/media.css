@@ -14,6 +14,7 @@ and (max-width : 580px) {
 
 	nav > ul > li { float: none; width: auto; margin: 0; }
 	nav > ul > li > a {  }
+	nav > ul > li ul {position: static; text-align: left; width: 100%; border: none;}
 
 	.nav-toggle {background: #5c748e; border: 1px solid #D0D0D0; box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.1); }
 	.nav-toggle.active { margin-bottom: 0; background: #5c748e; color: #FFF;  }
