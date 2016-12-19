@@ -28,9 +28,9 @@ namespace Blog.Controllers
 
         public ActionResult List()
         {
-            using (var database = new BlogDbContext())
+            using (var db = new BlogDbContext())
             {
-                var recipes = database.Recipes
+                var recipes = db.Recipes
                     .Include(a => a.Author)
                     .Include(a => a.RecipeTags)
                     .ToList();
