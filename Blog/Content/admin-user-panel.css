@@ -18,6 +18,10 @@ table thead tr th:first-child{
     margin-bottom: 10px;
 }
 
+.info{
+    background-color:lightblue; 
+}
+
 
 
 
