@@ -228,10 +228,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Blog-20161201083030.mdf" />
-    <Content Include="App_Data\aspnet-Blog-20161201083030_log.ldf">
-      <DependentUpon>aspnet-Blog-20161201083030.mdf</DependentUpon>
-    </Content>
     <Content Include="Blog-Design\createnewpost.html" />
     <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
@@ -342,7 +338,9 @@
     <Content Include="Views\RecipeCategory\List.cshtml" />
     <Content Include="Views\RecipeTag\ListRecipesByTag.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
