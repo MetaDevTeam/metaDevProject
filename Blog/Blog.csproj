@@ -228,6 +228,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Blog-Design\categorylist.html" />
     <Content Include="Blog-Design\createnewpost.html" />
     <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
