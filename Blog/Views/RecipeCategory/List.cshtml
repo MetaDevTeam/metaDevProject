@@ -4,32 +4,41 @@
     ViewBag.Title = "List Recipe Categories";
 }
 
-<div class="container">
-    <div class="well">
-        <h2>@ViewBag.Title - @Html.ActionLink("Create", "Create", "RecipeCategory", null, new { @class = "btn btn-warning" })</h2>
-        <div class="row">
-            <table class="table table-striped table-hover col-sm-12">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var recipeCategory in Model)
-                    {
+<div class="content">
+    <div class="inner">
+        <div class="categories-create">
+            <h2>@ViewBag.Title</h2>
+
+            <div class="buttons top-button">
+                @Html.ActionLink("Create", "Create", "RecipeCategory", new { @class = "button" })
+            </div>
+
+            <div class="row">
+                <table>
+                    <thead>
                         <tr>
-                            <td>@recipeCategory.id</td>
-                            <td>@recipeCategory.Name</td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", "RecipeCategory", new { @id = recipeCategory.id }, null)
-                                @Html.ActionLink("Delete", "Delete", "RecipeCategory", new { @id = recipeCategory.id }, null)
-                            </td>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Actions</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var recipeCategory in Model)
+                        {
+                            <tr>
+                                <td>@recipeCategory.id</td>
+                                <td>@recipeCategory.Name</td>
+                                <td>
+                                    <div class="buttons">
+                                        @Html.ActionLink("Edit", "Edit", "RecipeCategory", new { @id = recipeCategory.id }, new { @class="button"})
+                                        @Html.ActionLink("Delete", "Delete", "RecipeCategory", new { @id = recipeCategory.id }, new { @class = "button" })
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

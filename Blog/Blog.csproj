@@ -239,6 +239,7 @@
     <Content Include="Blog-Design\indexlogged.html" />
     <Content Include="Blog-Design\login.html" />
     <Content Include="Blog-Design\register.html" />
+    <Content Include="Content\admin-user-panel.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\common.css" />
     <Content Include="Content\forms.css" />

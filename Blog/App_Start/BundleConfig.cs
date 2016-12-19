@@ -37,7 +37,8 @@ namespace Blog
                       "~/Content/media.css",
                       "~/Content/navigation.css",
                       "~/Content/responsive-nav.css",
-                      "~/Content/typography.css"));
+                      "~/Content/typography.css",
+                      "~/Content/admin-user-panel.css"));
         }
     }
 }
