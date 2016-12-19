@@ -20,9 +20,9 @@
                     </p>
                     <footer>
                         <div class="pull-left">
-                            @foreach (var tag in recipe.RecipeTags)
+                            @foreach (var recipeTag in recipe.RecipeTags)
                             {
-                                @Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "btn btn-default btn-xs" })
+                                @Html.ActionLink(recipeTag.Name, "ListRecipesByTag", "RecipeTag", new { @id = recipeTag.Id }, new { @class = "btn btn-default btn-xs" })
                             }
                         </div>
                         <small class="author pull-right">
