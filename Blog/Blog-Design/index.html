@@ -33,13 +33,15 @@
 					<div class="right-nav">
 						<div class="center">
 							<nav> <!-- class="nav-collapse" -->
-								<ul>									
-									<li id="search-box">
-										<input type="text" name="search" placeholder="SEARCH">
-									</li>					
-									<li><a href="register.html">Register</a></li>
-									<li><a href="login.html">Login</a></li>									
-								</ul>
+                                <ul>
+                                    <li id="search-box">
+                                        <input type="text" name="search" placeholder="SEARCH">
+                                    </li>
+                                    <li>
+                                        <a href="/Manage">Hello admin@admin.com!</a>
+                                    </li>
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                </ul>
 							</nav>
 						</div>
 					</div>
@@ -52,6 +54,19 @@
 							<li><a href="#">About</a></li>
 							<li><a href="#">All recipes</a></li>
 							<li><a href="#">Contact</a></li>
+							<li><a href="#">Admin</a>
+								<ul>
+									<li><a href="/User/List">Users</a></li>
+									<li><a href="/Category/List">Categories</a></li>
+									<li><a href="/RecipeCategory/List">Recipes Categories</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Create</a>
+								<ul>
+									<li><a href="/Recipe/Create">Recipes</a></li>
+									<li><a href="/Article/Create">Articles</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				
