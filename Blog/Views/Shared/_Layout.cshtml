@@ -37,17 +37,7 @@
             @RenderBody()
             <div class="sidebar">
                 <div class="panel">
-                    <!-- <div class="cnt"> -->
-                    <div class="categories-nav">
-                        <header>Categories</header>
-                        <ul>
-                            <li><a href="#">All Recipes</a></li>
-                            <li><a href="#">Main courses</a></li>
-                            <li><a href="#">Desserts</a></li>
-                            <li><a href="#">Salads</a></li>
-                            <li><a href="#">Breakfast</a></li>
-                        </ul>
-                    </div>
+                    @Html.Partial("_RecipeCategories", Model)
                     <div class="tags-nav">
                         <header>Popular tags</header>
                         <ul class="tags">

@@ -13,7 +13,7 @@ namespace Blog.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("ListRecipeCategories");
+            return RedirectToAction("List", "Recipe");
         }
 
         public ActionResult ListCategories()

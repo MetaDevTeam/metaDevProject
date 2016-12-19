@@ -1,12 +1,12 @@
 ﻿@model List<Blog.Models.RecipeCategory>
 
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "List Recipe Categories";
 }
 
 <div class="container">
     <div class="well">
-        <h2>All Recipe Categories - @Html.ActionLink("Create", "Create", "RecipeCategory", null, new { @class = "btn btn-warning" })</h2>
+        <h2>@ViewBag.Title - @Html.ActionLink("Create", "Create", "RecipeCategory", null, new { @class = "btn btn-warning" })</h2>
         <div class="row">
             <table class="table table-striped table-hover col-sm-12">
                 <thead>
