@@ -10,8 +10,8 @@
         {
             <div class="wrapper">
                 <article>
-                    <a href="@Url.Action("Details", "Recipe")" title="@recipe.Title" class="fancybox">
-                        <img alt="@recipe.Title" src="@Url.Content("../Content/Images/Recipes/Thanksgiving-009.jpg")">
+                    <a href="@Url.Action("Details", "Recipe", new { @id = recipe.Id })" title="@recipe.Title" class="fancybox">
+                        <img alt="@recipe.Title" src="~/Content/Images/Recipes/Thanksgiving-009.jpg">
                     </a>
                     <h2>
                         @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
@@ -26,7 +26,7 @@
                                 <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                             }
                         </ul>
-                        <small class="author pull-right">
+                        <small class="small">
                             --author @recipe.Author.FullName
                         </small>
                     </footer>

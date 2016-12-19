@@ -4,11 +4,11 @@
     ViewBag.Title = "List";
 }
 
-<div class="container">
-    <div class="row">
+<div class="content">
+    <div class="inner">
         @foreach (var article in Model)
         {
-            <div class="col-sm-6">
+            <div class="wrapper">
                 <article>
                     <header>
                         <h2>
@@ -19,13 +19,15 @@
                         @article.Content
                     </p>
                     <footer>
-                        <div class="pull-left">
+                        <ul class="tags">
                             @foreach (var tag in article.Tags)
                             {
-                                @Html.ActionLink(tag.Name, "ListArticlesByTag", "Tag", new { @id = tag.Id }, new { @class = "btn btn-default btn-xs" })
+                                <li>
+                                    @Html.ActionLink(tag.Name, "ListArticlesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag tag-article" })
+                                </li>
                             }
-                        </div>
-                        <small class="author pull-right">
+                        </ul>
+                        <small class="small">
                             --author @article.Author.FullName
                         </small>
                     </footer>
@@ -34,4 +36,3 @@
         }
     </div>
 </div>
-<hr />

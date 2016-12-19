@@ -87,7 +87,8 @@ article footer .pull-right {float: right; margin-right: 2em;}
 }
 
 .tags li {
-  float: left; 
+  float: left;
+  list-style: outside none none;
 }
 
 .tag {
@@ -102,6 +103,7 @@ article footer .pull-right {float: right; margin-right: 2em;}
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
+  list-style: outside none none;
 }
 
 .tag::before {
