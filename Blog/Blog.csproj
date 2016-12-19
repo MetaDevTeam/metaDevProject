@@ -345,6 +345,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shared\_RecipeCategories.cshtml" />
+    <Content Include="Views\RecipeTag\ListRecipesByTag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
