@@ -1,18 +1,8 @@
 ﻿@using Blog.Models
-
 @{
     ViewBag.Title = "Index";
-    
-
 }
-
-<ul>
-    @foreach (var admin in ViewBag.Admins)
-    {
-        <li>@admin</li>
-    }
-
-</ul>
+@Html.Partial("_mypartial");
 
 
 
