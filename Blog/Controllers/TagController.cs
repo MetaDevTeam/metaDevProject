@@ -45,11 +45,11 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 // Get article from database
-                var recipes = db.Tags
-                    .Include(r => r.Articles.Select(a => a.Tags))
-                    .Include(r => r.Articles.Select(a => a.Author))
-                    .FirstOrDefault(t => t.Id == id)
-                    .Articles
+                var recipes = db.RecipeTags
+                    .Include(r => r.Recipes.Select(rt => rt.RecipeTags))
+                    .Include(r => r.Recipes.Select(rt => rt.Author))
+                    .FirstOrDefault(rt => rt.Id == id)
+                    .Recipes
                     .ToList();
 
                 // Return the view
