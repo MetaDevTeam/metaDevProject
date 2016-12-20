@@ -23,22 +23,23 @@
                     @Html.PasswordFor(m => m.Password)
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
 				</p>
-                <p>
+
+                <div class="checkbox">
                     @Html.CheckBoxFor(m => m.RememberMe)
                     @Html.LabelFor(m => m.RememberMe)
-                </p>
-                <div class="buttons">
-                    <input type="submit" value="Log in" class="button" />
                 </div>
+                    <div class="buttons">
+                        <input type="submit" value="Log in" class="button" />
+                    </div>
+                    <p class="new-user">
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+                    @* Enable this once you have account confirmation enabled for password reset functionality
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>*@
             }
-        </section>
+</section>
     </div>
 </div>
 
