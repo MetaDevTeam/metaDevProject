@@ -15,6 +15,10 @@
                 @Html.TextBoxFor(m => m.Title, new { @readonly = "readonly" })
             </p>
             <p class="input">
+                @Html.LabelFor(m => m.Ingredients)
+                @Html.TextBox("ingredientsString", (object)ViewBag.IngredientsStrings, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
                 @Html.LabelFor(m => m.Content)
                 @Html.TextAreaFor(m => m.Content, new { @readonly = "readonly", @rows = "7" })
             </p>

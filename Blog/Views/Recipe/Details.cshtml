@@ -14,13 +14,20 @@
                 </h2>
                 <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-009.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-009.jpg" /><span></span></a>
                 <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-007.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-007.jpg" /><span></span></a>
+                <h3>Ingredients</h3>
+                <ul class="ingredients">
+                    @foreach (var ingredient in Model.Ingredients)
+                    {
+                        <li>@Html.ActionLink(ingredient.Name, "ListRecipesByIngredient", "Ingredient", new { @id = ingredient.Id }, new { @class = "ingredient  " })</li>
+                    }
+                </ul>
                 <p>
                     @Model.Content
                 </p>
                 <ul class="tags">
                     @foreach (var tag in Model.RecipeTags)
                     {
-                        <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
+                        <li>@Html.ActionLink(tag.Name, "ListArticlesByTag", "RecipeTag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                     }
                 </ul>
                 <footer class="pull-right">
