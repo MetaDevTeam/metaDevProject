@@ -11,14 +11,14 @@
                 @Model.Title
             </h2>
         </header>
-        @if (Model.Files.Any(f => f.FileType == Blog.Models.FileType.Avatar))
+        @if (Model.ImagePath != null)
         {
-            <dt>
-                Avatar
-            </dt>
-            <dd>
-                <img src="~/File?id=@Model.Files.First(f => f.FileType == Blog.Models.FileType.Avatar).FileId" alt="avatar" />
-            </dd>
+            <h2>
+                Photo
+            </h2>
+            <div>
+                <img src="@Model.ImagePath" alt="avatar" />
+            </div>
         }
         <p>
             @Model.Content

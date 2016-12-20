@@ -7,7 +7,7 @@
 <div class="container">
     <div class="well">
         <h2>Create Recipe</h2>
-        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -42,9 +42,9 @@
             </div>
 
             <div class="form-group">
-                @Html.Label("Avatar", new { @class = "control-label col-md-2" })
+                @Html.Label("Image", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input type="file" id="Avatar" name="upload" />
+                    <input type="file" id="search-box" name="upload" />
                 </div>
             </div>
 

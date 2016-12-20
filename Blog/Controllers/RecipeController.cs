@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -48,8 +49,8 @@ namespace Blog.Controllers
 
             using (var db = new BlogDbContext())
             {
-                Recipe recipeFile = db.Recipes.Include(s => s.Files)
-                    .SingleOrDefault(s => s.Id == id);
+                //Recipe recipeFile = db.Recipes.Include(s => s.Files)
+                //    .SingleOrDefault(s => s.Id == id);
 
                 var recipe = db.Recipes
                     .Where(a => a.Id == id)
@@ -85,51 +86,75 @@ namespace Blog.Controllers
         //POST: Recipe/Create
         [HttpPost]
         [Authorize]
-        public ActionResult Create(RecipeViewModel model, Recipe recipeFile, HttpPostedFileBase upload)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(RecipeViewModel model, HttpPostedFileBase upload)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            using (var db = new BlogDbContext())
             {
-                using (var db = new BlogDbContext())
+                //if (upload != null && upload.ContentLength > 0)
+                //{
+                //    var avatar = new File
+                //    {
+                //        FileName = System.IO.Path.GetFileName(upload.FileName),
+                //        FileType = FileType.Avatar,
+                //        ContentType = upload.ContentType
+                //    };
+                //    var reader = new System.IO.BinaryReader(upload.InputStream);
+
+                //    avatar.Content = reader.ReadBytes(upload.ContentLength);
+
+                //    //recipeFile.Files = new List<File> { avatar };
+                //}
+
+
+                
+
+                //Get Author id
+                var authorId = db.Users
+                    .Where(u => u.UserName == this.User.Identity.Name)
+                    .First()
+                    .Id;
+
+                var recipe = new Recipe(
+                    authorId,
+                    model.Title,
+                    model.Content,
+                    model.RecipeCategoryId);
+
+                if (upload != null)
                 {
-                    if (upload != null && upload.ContentLength > 0)
-                    {
-                        var avatar = new File
-                        {
-                            FileName = System.IO.Path.GetFileName(upload.FileName),
-                            FileType = FileType.Avatar,
-                            ContentType = upload.ContentType
-                        };
-                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                        {
-                            avatar.Content = reader.ReadBytes(upload.ContentLength);
-                        }
-                        recipeFile.Files = new List<File> { avatar };
-                    }
-                    //Get Author id
-                    var authorId = db.Users
-                        .Where(u => u.UserName == this.User.Identity.Name)
-                        .First()
-                        .Id;
+                    const int filenameLength = 20;
+                    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                    var recipe = new Recipe(
-                        authorId,
-                        model.Title,
-                        model.Content,
-                        model.RecipeCategoryId);
+                    var random = new Random();
 
-                    this.SetRecipeTags(recipe, model, db);
-                    //Set recipes author
-                    recipe.AuthorId = authorId;
+                    var randomFileName = new string(Enumerable.Repeat(chars, filenameLength)
+                      .Select(s => s[random.Next(s.Length)]).ToArray());
 
-                    //Save recipe in DB
-                    db.Recipes.Add(recipeFile);
-                    db.Recipes.Add(recipe);
-                    db.SaveChanges();
+                    randomFileName = randomFileName + Path.GetExtension(upload.FileName);
 
-                    return RedirectToAction("Index");
+                    var absolutePath = Server.MapPath("~/Content/Images/Recipes/");
+                    upload.SaveAs(absolutePath + randomFileName);
+
+                    recipe.ImagePath = $"/Content/Images/Recipes/{randomFileName}";
                 }
+
+                this.SetRecipeTags(recipe, model, db);
+                //Set recipes author
+                recipe.AuthorId = authorId;
+
+                //Save recipe in DB
+                //db.Recipes.Add(recipeFile);
+                db.Recipes.Add(recipe);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
             }
-            return View(model);
+            //}
+
+            // return View(model);
         }
 
         //

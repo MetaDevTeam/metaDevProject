@@ -13,7 +13,7 @@ namespace Blog.Models
 
         public Recipe()
         {
-            this.recipeTags = new HashSet<RecipeTag>();
+            this.RecipeTags = new HashSet<RecipeTag>();
         }
 
         public Recipe(string authorId, string title, string context, int recipeCategoryId)
@@ -22,7 +22,7 @@ namespace Blog.Models
             this.Title = title;
             this.Content = context;
             this.RecipeCategoryId = recipeCategoryId;
-            this.recipeTags = new HashSet<RecipeTag>();
+            this.RecipeTags = new HashSet<RecipeTag>();
         }
 
         [Key]
@@ -56,6 +56,6 @@ namespace Blog.Models
             set { this.recipeTags = value; }
         }
 
-        public virtual ICollection<File> Files { get; set; }
+        public string ImagePath { get; set; }
     }
 }
