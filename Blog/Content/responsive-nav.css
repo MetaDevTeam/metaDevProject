@@ -3,8 +3,8 @@
 .nav-collapse ul {
   margin: 0;
   padding: 0;
-  width: 100%;
-  display: block;
+/*  width: 100%;*/
+  /*display: block;*/
   list-style: none;
 }
 
@@ -18,7 +18,7 @@
   max-height: 0;
   position: absolute;
   display: block;
-  overflow: hidden;
+  /*overflow: hidden;*/
   zoom: 1;
 }
 
@@ -40,7 +40,7 @@
   user-select: none;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 580px) {
   .js .nav-collapse {
     position: relative;
   }

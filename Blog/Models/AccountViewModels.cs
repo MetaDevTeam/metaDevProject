@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Blog.Models
 {
+
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -114,4 +115,6 @@ namespace Blog.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
+    
 }

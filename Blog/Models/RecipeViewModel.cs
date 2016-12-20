@@ -20,7 +20,7 @@ namespace Blog.Models
         public string AuthorId { get; set; }
 
         [Required]
-        [Display(Name = "RecipeCategory")]
+        [Display(Name = "Recipe Category")]
         public int RecipeCategoryId { get; set; }
 
         public string RecipeTags { get; set; }
@@ -30,5 +30,7 @@ namespace Blog.Models
         public List<RecipeCategory> RecipeCategories { get; set; }
 
         public virtual ICollection<File> Files { get; set; }
+
+        public string Ingredients { get; set; }
     }
 }

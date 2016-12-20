@@ -13,7 +13,7 @@ namespace Blog.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("ListRecipeCategories");
+            return RedirectToAction("List", "Recipe");
         }
 
         public ActionResult ListCategories()
@@ -58,9 +58,10 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 var recipes = db.Recipes
-                    .Where(a => a.RecipeCategoryId == recipeCategoryId)
-                    .Include(a => a.Author)
-                    .Include(a => a.RecipeTags)
+                    .Where(r => r.RecipeCategoryId == recipeCategoryId)
+                    .Include(r => r.Author)
+                    .Include(r => r.RecipeTags)
+                    .Include(r => r.Ingredients)
                     .ToList();
 
                 return View(recipes);

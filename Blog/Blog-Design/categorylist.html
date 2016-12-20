@@ -6,7 +6,7 @@
     <title>Responsive design</title>
     <link rel="stylesheet" href="../Content/typography.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/navigation.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="../Content/gallery.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="../Content/admin-user-panel.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/common.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/forms.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/media.css" type="text/css" charset="utf-8">
@@ -19,20 +19,17 @@
 
     <!-- Fancybox -->
     <link rel="stylesheet" href="../Content/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="../Scripts/jquery.fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="../Scripts/jquery.fancybox/jquery.fancybox.pack.js"></script>
 
 
 </head>
 <body>
     <div class="container">
-
         <div class="header">
             <div class="inner">
                 <div class="logo">
                     <h1>Eating at home</h1>
                 </div>
-
-
                 <div class="right-nav">
                     <div class="center">
                         <nav>
@@ -41,30 +38,8 @@
                                 <li id="search-box">
                                     <input type="text" name="search" placeholder="SEARCH">
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="/User/List">Users</a></li>
-                                        <li><a href="/Category/List">Categories</a></li>
-                                        <li><a href="/RecipeCategory/List">Recipes Categories</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Create<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="/Recipe/Create">Recipes</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Article/Create">Articles</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="/Manage">Hello admin@admin.com!</a>
-                                </li>
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                <li><a href="register.html">Register</a></li>
+                                <li><a href="login.html">Login</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -85,22 +60,46 @@
         <div class="main">
             <div class="content">
                 <div class="inner">
-                    <div class="wrapper">
-                        <article>
-                            <a class="fancybox" rel="group" href="images/Cobb-Salad-004.jpg"><img src="images/Cobb-Salad-004.jpg" /><span></span></a>
-                            <h2>Vegetarian Cobb Salad</h2>
-                            <p>This salad has a few components to prepare, but if a few are completed in advance, it’s simple to put together and a fantastic combination of flavors. The star is the coconut bacon: smoky, crispy and rich, against the bite of the blue cheese, the velvety hard-boiled eggs, and the juicy tomatoes...</p>
+                    <div class="categories-create">
+                        <h2>All Recipe Categories</h2>
 
-                            <small class="author">
-                                Steve Fowler
-                            </small>
+                        <div class="top-button">
+                            <input type="submit" value="Create Category" class="button">
+                        </div>
 
-                            <footer>
-                                <div class="pull-right">
-                                    <a href="#">Read more &raquo;</a>
-                                </div>
-                            </footer>
-                        </article>
+                        <div class="row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Test</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Test2</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

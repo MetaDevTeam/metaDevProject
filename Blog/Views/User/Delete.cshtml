@@ -4,31 +4,22 @@
     ViewBag.Title = "Delete User";
 }
 
-<div class="container body-content span-8 offset-2">
-    <div class="well">
-        <h2>@ViewBag.Title</h2>
-
-        @using (Html.BeginForm("Delete", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+<div class="content">
+    <div class="inner">
+        @using (Html.BeginForm("Delete", "User", FormMethod.Post, new { @class = "compact" }))
         {
-            <div class="form-group">
-                @Html.LabelFor(m => m.UserName, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control col-sm-4", @readonly = "readonly" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.FullName, new { @class = "control-label col-sm-4" })
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control col-sm-4", @readonly = "readonly" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
-                    @Html.ActionLink("Cancel", "List", "User", null, new { @class = "btn btn-default" })
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-                </div>
+            <h3>@ViewBag.Title</h3>
+            <p class="input">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @readonly = "readonly" })
+            </p>
+            <p class="input">
+                @Html.LabelFor(m => m.FullName)
+                @Html.TextBoxFor(m => m.FullName, new { @readonly = "readonly" })
+            </p>
+            <div class="buttons">
+                    @Html.ActionLink("Cancel", "List", "User", null, new { @class = "button" })
+                    <input type="submit" value="Delete" class="button" />
             </div>
         }
 

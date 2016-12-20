@@ -195,6 +195,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AplicationUser.cs" />
     <Compile Include="Controllers\Admin\CategoryController.cs" />
@@ -202,10 +203,12 @@
     <Compile Include="Controllers\Admin\UserController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\RecipeTagController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,6 +227,7 @@
     <Compile Include="Models\EditUserViewModel.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeCategory.cs" />
@@ -231,6 +235,7 @@
     <Compile Include="Models\RecipeViewModel.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -239,12 +244,16 @@
     <Content Include="App_Data\aspnet-Blog-20161201083030_log.ldf">
       <DependentUpon>aspnet-Blog-20161201083030.mdf</DependentUpon>
     </Content>
+    <Content Include="Blog-Design\about.html" />
+    <Content Include="Blog-Design\categorylist.html" />
+    <Content Include="Blog-Design\Contact.html" />
     <Content Include="Blog-Design\createnewpost.html" />
     <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
     <Content Include="Blog-Design\indexlogged.html" />
     <Content Include="Blog-Design\login.html" />
     <Content Include="Blog-Design\register.html" />
+    <Content Include="Content\admin-user-panel.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\common.css" />
     <Content Include="Content\forms.css" />
@@ -262,6 +271,7 @@
     <Content Include="Content\media.css" />
     <Content Include="Content\navigation.css" />
     <Content Include="Content\responsive-nav.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\typography.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -286,7 +296,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\responsive-nav\responsive-nav.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -347,10 +359,16 @@
     <Content Include="Views\RecipeCategory\Delete.cshtml" />
     <Content Include="Views\RecipeCategory\Edit.cshtml" />
     <Content Include="Views\RecipeCategory\List.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Shared\_RecipeCategories.cshtml" />
     <Content Include="Views\RecipeTag\ListRecipesByTag.cshtml" />
+    <Content Include="Views\Shared\_AdminPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\File\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Ingredient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
