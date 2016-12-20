@@ -5,34 +5,15 @@
 }
 <div class="content">
     <div class="inner">
-        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "compact", role = "form" }))
-        {
-            <h3>Contact</h3>
-            <h4>Send us a note!</h4>
-            <hr />
-            @Html.ValidationSummary("", new { @class = "text-danger" })
-            <p class="input">
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email)
-                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-            </p>
-            <p class="input">
-                <label for="Email">Message Text</label>
-                <textarea cols="20" data-val="true" data-val-required="The Content field is required." id="Message Text" name="Content" rows="7"></textarea>
-            </p>
-            <div class="buttons">
-                <input type="submit" value="Send" class="button" />
-            </div>
-        }
+        <header class="contact-header">CONTACT US</header>
+
+            <form id="formContact" class="topBeforeContact">
+
+                <input id="nameContact" type="text" placeholder="NAME">
+                <input id="emailContact" type="text" placeholder="E-MAIL">
+                <textarea id="messageContact" type="text" placeholder="MESSAGE"></textarea>
+                <input id="submitContact" type="submit" value="SUBMIT!">
+            </form>
     </div>
 </div>
-<header>CONTACT US</header>
-
-<form id="formContact" class="topBeforeContact">
-
-    <input id="nameContact" type="text" placeholder="NAME">
-    <input id="emailContact" type="text" placeholder="E-MAIL">
-    <textarea id="messageContact" type="text" placeholder="MESSAGE"></textarea>
-    <input id="submitContact" type="submit" value="SUBMIT!">
-</form>
 

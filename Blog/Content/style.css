@@ -75,7 +75,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 }
 
 
-header {
+.contact-header {
     position: relative;
     margin: 100px 0 25px 0;
     font-size: 2.3em;
@@ -161,5 +161,4 @@ textarea:hover {
 
 #submit:hover {
     color: #e2dedb;
-}body {
 }
