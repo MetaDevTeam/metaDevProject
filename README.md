@@ -13,7 +13,10 @@ We are Zlatyo, Yulia, Mitko, Pavlin, and Ivanka - each one having his particular
 * __PAVLIN__ implemented the Contact form and the functionality of the About section (and controllers controllers for listing only admin profiles), an alternative, moder and complex design that did not get to the repository.
 * __IVANKA__ prepared the main documentation related to the blog content, as well as lent a helping hand for the integration of some of the views.
 
-The blog contains Home, About, Recipies, Blog, Contact, Create (Dropdown menu for creating Recipes and Articles) menus.
-Home opens the full list of recipes. About says who we are and what it is all about. Recipes contains recipes organized by categories and illustrated by images. The Blog section is intended to enable discussions concerning any recipies or culinary topics initiated by users. The Contact menu allows users to contact us by providing a Contact Form.
+## The Eat at home blog
+The blog contains _Home_, _About_, _Recipies_, _Blog_, _Contact_, _Create_ (_Dropdown_ menu for creating __Recipes__ and __Articles__) menus.
+Home opens the full list of recipes. About says who we are and what it is all about. Recipes contains recipes organized by categories and illustrated by images. The __Blog__ section is intended to enable discussions concerning any recipies or culinary topics initiated by users. The Contact menu allows users to contact us by providing a Contact Form.
 
-Users can register and log in if once registered via the REGISTER and LOGIN functionalities in order to participate in blog discussions. The Search field and the right-standing CATEGORIES and POPULAR TAGS boxes are currently only part of the design (non-functional).
+Users can register and log in if once registered via the _REGISTER_ and _LOGIN_ functionalities in order to participate contribute with blog posts.
+
+The Search field and the right-standing _CATEGORIES_ and _POPULAR TAGS_ boxes are currently only part of the design (non-functional) :(.
