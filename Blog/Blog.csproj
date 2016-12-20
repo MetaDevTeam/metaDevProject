@@ -240,10 +240,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Blog-20161201083030.mdf" />
-    <Content Include="App_Data\aspnet-Blog-20161201083030_log.ldf">
-      <DependentUpon>aspnet-Blog-20161201083030.mdf</DependentUpon>
-    </Content>
     <Content Include="Blog-Design\about.html" />
     <Content Include="Blog-Design\categorylist.html" />
     <Content Include="Blog-Design\Contact.html" />
@@ -366,8 +362,8 @@
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\File\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\File\" />
     <Folder Include="Views\Ingredient\" />
   </ItemGroup>
   <ItemGroup>
