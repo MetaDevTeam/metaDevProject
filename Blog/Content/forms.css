@@ -50,5 +50,8 @@ form .buttons .button { float: left; margin-right: 1em; margin-bottom: 0; }
 
 form.compact .buttons { clear: both; padding-left: 33%; }
 
-	
+form.compact .checkbox {padding-left: 33%; margin-bottom: 0.5em;}
 
+input[type="checkbox"] {
+  margin: 4px 3px 3px 4px;
+}

@@ -18,6 +18,8 @@ namespace Blog
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/main").Include(
+                        "~/Scripts/main.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
@@ -31,6 +33,10 @@ namespace Blog
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootsrap.css",
+                      "~/Content/bootsrap.min.css",
+                      "~/Content/bootsrap-responsive.min.css",
+                      "~/Content/main.css",
+                      "~/Content/fonts.css",
                       "~/Content/common.css",
                       "~/Content/style.css",
                       "~/Content/forms.css",
@@ -39,7 +45,8 @@ namespace Blog
                       "~/Content/media.css",
                       "~/Content/navigation.css",
                       "~/Content/responsive-nav.css",
-                      "~/Content/typography.css"));
+                      "~/Content/typography.css",
+                      "~/Content/admin-user-panel.css"));
         }
     }
 }

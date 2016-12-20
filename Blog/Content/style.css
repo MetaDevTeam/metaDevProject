@@ -74,6 +74,11 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     color: #cbc6c1;
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+    background: white;
+    color: #b3aca7;
+}
 
 header {
     position: relative;
@@ -83,7 +88,7 @@ header {
     letter-spacing: 7px;
 }
 
-#formContact {
+#form {
     position: relative;
     width: 500px;
     margin: 50px auto 100px auto;
@@ -119,7 +124,6 @@ textarea {
     max-width: 470px;
     height: 110px;
     max-height: 110px;
-    padding-left: 30%;
     padding: 15px;
 
     background: transparent;
@@ -142,7 +146,7 @@ textarea:hover {
     color: #e2dedb;
 }
 
-#submitContact {
+#submit {
     width: 502px;
 
     padding: 0;
@@ -161,5 +165,4 @@ textarea:hover {
 
 #submit:hover {
     color: #e2dedb;
-}body {
 }

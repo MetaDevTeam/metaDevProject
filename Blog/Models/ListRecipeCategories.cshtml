@@ -11,8 +11,8 @@
             <div class="col-sm-6 text-center text-uppercase">
                 <p>
                     <h2>
-                        @Html.ActionLink(string.Format($"{recipeCategory.Name} ({recipeCategory.Recipes.Count})"),
-                        "ListRecipes", "Home", new { @recipeCategoryId = recipeCategory.id }, null)
+                        @Html.ActionLink(string.Format($"{recipeCategory.Name} ({recipeCategory.Recipes.Count()})"),
+                        "ListRecipes", "RecipeCategory", new { @recipesCategoryId = recipeCategory.id }, null)
                     </h2>
                 </p>
             </div>

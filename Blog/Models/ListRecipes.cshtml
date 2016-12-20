@@ -21,7 +21,7 @@
                     <div class="pull-left">
                         @foreach (var recipeTag in recipe.RecipeTags)
                         {
-                            @Html.ActionLink(recipeTag.Name, "ListRecipesByTag", "RecipeTag", new { @id = recipeTag.Id }, new { @class = "btn btn-default btn-xs" })
+                            @Html.ActionLink(recipeTag.Name, "ListRecipeByTag", "RecipeTag", new { @id = recipeTag.Id }, new { @class = "btn btn-default btn-xs" })
                         }
                     </div>
                     <small class="author pull-right">

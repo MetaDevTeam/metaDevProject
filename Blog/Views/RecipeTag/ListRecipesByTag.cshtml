@@ -1,0 +1,39 @@
+﻿@model List<Blog.Models.Recipe>
+
+@{
+    ViewBag.Title = "List Recipes By Tag";
+}
+
+<h2>ViewBag.Title</h2>
+
+<div class="content">
+    <div class="inner">
+        @foreach (var recipe in Model)
+        {
+            <div class="wrapper">
+                <article>
+                    <header>
+                        <h2>
+                            @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
+                        </h2>
+                    </header>
+                    <p>
+                        @recipe.Content
+                    </p>
+                    <footer>
+                        <ul class="tag">
+                            @foreach (var recipeTag in recipe.RecipeTags)
+                            {
+                                @Html.ActionLink(recipeTag.Name, "ListRecipesByTag", "RecipeTag", new { @id = recipeTag.Id }, new { @class = "tag tag-article" })
+                            }
+                        </ul>
+                        <small class="small">
+                            --author @recipe.Author.FullName
+                        </small>
+                    </footer>
+                </article>
+            </div>
+        }
+    </div>
+</div>
+<hr />

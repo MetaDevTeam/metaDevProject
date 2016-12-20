@@ -4,28 +4,29 @@
     ViewBag.Title = "List";
 }
 
-<div class="container">
-    <div class="row">
+<div class="content">
+    <div class="inner">
         @foreach (var recipe in Model)
         {
-            <div class="col-sm-6">
+            <div class="wrapper">
                 <article>
-                    <header>
-                        <h2>
-                            @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
-                        </h2>
-                    </header>
+                    <a href="@Url.Action("Details", "Recipe", new { @id = recipe.Id })" title="@recipe.Title" class="fancybox">
+                        <img alt="@recipe.Title" src="~/Content/Images/Recipes/Thanksgiving-009.jpg">
+                    </a>
+                    <h2>
+                        @Html.ActionLink(@recipe.Title, "Details", "Recipe", new { @id = recipe.Id }, null)
+                    </h2>
                     <p>
                         @recipe.Content
                     </p>
                     <footer>
-                        <div class="pull-left">
+                        <ul class="tags">
                             @foreach (var tag in recipe.RecipeTags)
                             {
-                                @Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "btn btn-default btn-xs" })
+                                <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                             }
-                        </div>
-                        <small class="author pull-right">
+                        </ul>
+                        <small class="small">
                             --author @recipe.Author.FullName
                         </small>
                     </footer>
@@ -34,4 +35,3 @@
         }
     </div>
 </div>
-<hr />

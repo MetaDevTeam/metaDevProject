@@ -24,7 +24,7 @@
             <p class="input">
                 @Html.LabelFor(m => m.RecipeCategoryId)
                 @Html.DropDownListFor(m => m.RecipeCategoryId,
-                new SelectList(Model.RecipeCategories, "Id", "Name"))                
+                new SelectList(Model.RecipeCategories, "Id", "Name"), new { @class="button"})                
             </p>
 
             <p class="input">

@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    @Html.AntiForgeryToken()
+    if (User.IsInRole("Admin"))
+    {
+        <li>
+            <a href="#">Admin</a>
+            <ul>
+                <li>@Html.ActionLink("Users", "List", "User")</li>
+                <li>@Html.ActionLink("Categories", "List", "Category")</li>
+                <li>@Html.ActionLink("Recipes Categories", "List", "RecipeCategory")</li>
+            </ul>
+        </li>
+    }
+    <li>
+        <a href="#">Create</a>
+        <ul>
+            <li>
+                @Html.ActionLink("Recipes", "Create", "Recipe")
+            </li>
+            <li>
+                @Html.ActionLink("Articles", "Create", "Article")
+            </li>
+        </ul>
+    </li>
+}

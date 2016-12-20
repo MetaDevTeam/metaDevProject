@@ -1,30 +1,36 @@
 ﻿@model Blog.Models.Recipe
-
 @{
     ViewBag.Title = "Details";
 }
-
-<div class="container">
-    <article>
-        <header>
-            <h2>
-                @Model.Title
-            </h2>
-        </header>
-        <p>
-            @Model.Content
-        </p>
-        <small class="author">
-            --author @Model.Author.FullName
-        </small>
-        <footer class="pull-right">
-            @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
+<div class="content">
+    <div class="inner">
+        <article>
+            <header>
+                <h3>
+                    @Model.Title
+                </h3>
+            </header>
+            <img src="~/Content/Images/Recipes/Thanksgiving-009.jpg" />
+            <p>
+                @Model.Content
+            </p>
+            <ul class="tags">
+                @foreach (var tag in Model.RecipeTags)
+                {
+                    <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
+                }
+            </ul>
+            <small class="author">
+                --author @Model.Author.FullName
+            </small>
+            <footer class="pull-right">
+                @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
             {
-                @Html.ActionLink("Edit", "Edit", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
-                @Html.ActionLink("Delete", "Delete", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
-            }
-            @Html.ActionLink("Back", "Index", "Recipe", null, new { @class = "btn btn-default btn-xs" })
-        </footer>
-    </article>
+                    @Html.ActionLink("Edit", "Edit", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
+                    @Html.ActionLink("Delete", "Delete", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                }
+                @Html.ActionLink("Back", "Index", "Recipe", null, new { @class = "btn btn-default btn-xs" })
+            </footer>
+        </article>
+    </div>
 </div>
-<hr />

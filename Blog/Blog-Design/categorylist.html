@@ -6,7 +6,7 @@
     <title>Responsive design</title>
     <link rel="stylesheet" href="../Content/typography.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/navigation.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="../Content/gallery.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="../Content/admin-user-panel.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/common.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/forms.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="../Content/media.css" type="text/css" charset="utf-8">
@@ -60,38 +60,46 @@
         <div class="main">
             <div class="content">
                 <div class="inner">
-                    <div class="article-wrapper">
-                        <article>
-                            <small class="author">
-                                <span>by</span> Yulia
-                            </small>
-                            <h2>Roasted Cauliflower and Apples with Dill</h2>
-                            <a class="fancybox" rel="group" href="../Content/Images/Recipes/Thanksgiving-009.jpg"><img src="../Content/Images/Recipes/Thanksgiving-009.jpg" /><span></span></a>
-                            <a class="fancybox" rel="group" href="../Content/Images/Recipes/Thanksgiving-007.jpg"><img src="../Content/Images/Recipes/Thanksgiving-007.jpg" /><span></span></a>
+                    <div class="categories-create">
+                        <h2>All Recipe Categories</h2>
 
-                            <p>The magic of *roasted vegetables* was one of my favorite discoveries when we first started exploring cooking. I didn’t love raw cauliflower at the time, but roasted was a whole different matter: rich, almost buttery goodness that I couldn’t help myself from snitching off the roasting pan. Can roasted vegetables be considered a gateway drug to eating nutritious foods? Eating them is one of my earliest memories of realizing healthy foods can be utterly delicious (and for this reason, we talk a little about roasting vegetables in Episode 1 of our podcast).</p>
-                            <p>This recipe is an old favorite of ours that we made for Thanksgiving 2011 (here’s the old recipe), with an updated photo and some slight tweaks. It came out just as flavorful as I remembered; sweet red onions and apples against the savory cauliflower, punctuated by the refreshing, aromatic fresh dill. It’s a family favorite, for sure. If you do try it, make sure to get a hold of some fresh dill; it will likely have to be store-bought since the growing season is over by now in Indiana, but it’s absolutely worth it for the splurge.</p>
-                            <p>This side dish is the last in our Healthy Thanksgiving 2015 menu, where Alex and I create a veggie-filled menu to show that the holiday can be about seasonal, nutritious eating instead of stuffing ourselves with rich foods. We hope you’ve enjoyed our Thanksgiving menu, and we’d love to see and hear about what you’re planning to make this year!
-                            PS This is also a great recipe for anytime, so roast away all season!</p>
-                            <p>Why to Make It: A flavorful, sweet + savory side dish that works for various diets (vegan, dairy-free, gluten-free). Roasted veg for the win!
-                                When To Make It: Summer or Fall
-                                Caveats: This takes about 45 minutes to 1 hour to prepare, but the time is mostly hands off and the taste is worth every minute of the wait.</p>
+                        <div class="top-button">
+                            <input type="submit" value="Create Category" class="button">
+                        </div>
 
-
-                            <p></p>
-
-
-
-
-                            <footer>
-                                <div class="pull-right">
-                                    <a href="#">Edit</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#">Delete</a>
-                                </div>
-                            </footer>
-                        </article>
+                        <div class="row">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Test</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Test2</td>
+                                        <td>
+                                            <div class="buttons">
+                                                <input type="submit" value="Edit" class="button">
+                                                <input type="reset" value="Delete" class="button">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

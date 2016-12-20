@@ -24,9 +24,8 @@ body {background: #f3f3f3;}
 .content img { max-width: 100%; overflow: hidden;}
 .wrapper {float: left; width: 50%;}
 article h2 {margin-top: 0.5em;}
+article h2 a {color: #000000;}
 article { padding: 1.5em; }
-
-/*---read more button---*/
 
 article footer {overflow: hidden;}
 article footer .pull-right {float: right; margin-right: 2em;}
@@ -51,6 +50,13 @@ article footer .pull-right {float: right; margin-right: 2em;}
 	color: #fff;
 	transition: .25s;
 }
+
+/*---single Article ---*/
+
+.article-wrapper {width: 90%;}
+.article-wrapper{ margin: 0 auto;}
+.article-wrapper .author span {text-transform: lowercase; font-style: italic;}
+.article-wrapper h2 {margin-bottom: 0.8em;}
 
 /*------SIDEBAR-----*/
 
@@ -87,7 +93,8 @@ article footer .pull-right {float: right; margin-right: 2em;}
 }
 
 .tags li {
-  float: left; 
+  float: left;
+  list-style: outside none none;
 }
 
 .tag {
@@ -95,13 +102,13 @@ article footer .pull-right {float: right; margin-right: 2em;}
   border-radius: 3px 0 0 3px;
   color: #5c748e;
   display: inline-block;
-  height: 26px;
   line-height: 26px;
   padding: 0 20px 0 23px;
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
+  list-style: outside none none;
 }
 
 .tag::before {
@@ -135,7 +142,19 @@ article footer .pull-right {float: right; margin-right: 2em;}
 
 .tag:hover::after {
    border-left-color: crimson; 
-}	
+}
+
+
+
+.tag-article {
+  background: #5c748e;
+  color: #fff;
+}
+
+.tag-article::after {
+  background: #fff;
+  border-left-color: #5c748e;
+}
 
 
 /*----SEARCH-BOX----*/

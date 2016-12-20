@@ -13,7 +13,7 @@ namespace Blog.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("ListRecipeCategories");
+            return RedirectToAction("List", "Recipe");
         }
 
         public ActionResult ListCategories()
@@ -48,9 +48,9 @@ namespace Blog.Controllers
             }
         }
 
-        public ActionResult ListRecipes(int? categoryId)
+        public ActionResult ListRecipes(int? recipeCategoryId)
         {
-            if (categoryId == null)
+            if (recipeCategoryId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -58,7 +58,7 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 var recipes = db.Recipes
-                    .Where(a => a.RecipeCategoryId == categoryId)
+                    .Where(a => a.RecipeCategoryId == recipeCategoryId)
                     .Include(a => a.Author)
                     .Include(a => a.RecipeTags)
                     .ToList();
