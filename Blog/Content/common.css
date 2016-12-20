@@ -60,11 +60,11 @@ article footer .pull-right {float: right; margin-right: 2em;}
 .article-wrapper .portion {text-transform: lowercase; letter-spacing: 1.5px; font-size: 12px; font-size: 13px;}
 .article-wrapper .portion p {padding-bottom: 0;}
 .article-wrapper h4 {padding-top: 0.8em; padding-bottom:0.4em; letter-spacing: 1.5px;}
-.article-wrapper ul li {list-style: disc inside;}
+.article-wrapper ul li.in {list-style: disc inside;}
 .article-wrapper ul {padding-bottom: 0;}
 .article-wrapper ol li.instruction {margin-left: 2em;}
 .article-wrapper ol li {padding-bottom: 1em;}
-ul.tags {list-style: none}
+.tags li {list-style: none;}
 
 
 /*------SIDEBAR-----*/
