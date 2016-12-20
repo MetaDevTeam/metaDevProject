@@ -51,7 +51,9 @@ form .buttons .button { float: left; margin-right: 1em; margin-bottom: 0; }
 form.compact .buttons { clear: both; padding-left: 33%; }
 
 form.compact .checkbox {padding-left: 33%; margin-bottom: 0.5em;}
-form.compact .new-user {padding-left: 33%; margin-bottom: 0.5em;}
+form .new-user {padding-left: 33%; margin-bottom: 0.5em; padding-top: 0.5em;}
+form .new-user a {color: #000000;}
+form .new-user a:hover {text-shadow: 0px 1px 1px #006288;}
 
 input[type="checkbox"] {
   margin: 4px 3px 3px 4px;
