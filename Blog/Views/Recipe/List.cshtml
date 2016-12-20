@@ -29,7 +29,7 @@
                         <ul class="tags">
                             @foreach (var tag in recipe.RecipeTags)
                             {
-                                <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
+                                <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "RecipeTag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                             }
                         </ul>
                         <small class="small">
