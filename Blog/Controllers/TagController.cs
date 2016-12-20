@@ -53,7 +53,7 @@ namespace Blog.Controllers
                     .ToList();
 
                 // Return the view
-                return View(articles);
+                return View(recipes);
             }
         }
     }
