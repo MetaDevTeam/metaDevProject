@@ -50,7 +50,7 @@ namespace Blog.Controllers
 
             using (var db = new BlogDbContext())
             {
-                var recipe = database.Recipes
+                var recipe = db.Recipes
                     .Where(r => r.Id == id)
                     .Include(r => r.Author)
                     .Include(r => r.RecipeTags)
@@ -141,6 +141,7 @@ namespace Blog.Controllers
                 }
 
                 this.SetRecipeTags(recipe, model, db);
+                this.SetRecipeIngredients(recipe, model, db);
                 //Set recipes author
                 recipe.AuthorId = authorId;
 

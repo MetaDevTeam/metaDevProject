@@ -32,19 +32,11 @@
                 new SelectList(Model.RecipeCategories, "Id", "Name"), new { @class="button"})                
             </p>
 
-            <div class="form-group">
+            <p class="input">
                 @Html.Label("Image", new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
                     <input type="file" id="search-box" name="upload" />
-                </div>
-            </div>
+            </p>
 
-            <div class="form-group">
-                <div class="col-sm-4 col-sm-offset-4">
-                    @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "btn btn-default" })
-                    <input type="submit" value="Create" class="btn btn-success" />
-                </div>
-            </div>
             <p class="input">
                 @Html.LabelFor(m => m.RecipeTags)
                 @Html.TextBoxFor(m => m.RecipeTags)
