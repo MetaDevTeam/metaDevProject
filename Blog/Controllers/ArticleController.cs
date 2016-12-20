@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Blog.Controllers
 {
+    [Authorize]
     public class ArticleController : Controller
     {
 

@@ -4,9 +4,10 @@
     ViewBag.Title = "Create";
 }
 
-<div class="content">
-    <div class="inner">
-        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "compact" }))
+<div class="container">
+    <div class="well">
+        <h2>Create Recipe</h2>
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("")
@@ -29,6 +30,11 @@
                 @Html.LabelFor(m => m.RecipeCategoryId)
                 @Html.DropDownListFor(m => m.RecipeCategoryId,
                 new SelectList(Model.RecipeCategories, "Id", "Name"), new { @class="button"})                
+            </p>
+
+            <p class="input">
+                @Html.Label("Image", new { @class = "control-label col-md-2" })
+                    <input type="file" id="search-box" name="upload" />
             </p>
 
             <p class="input">

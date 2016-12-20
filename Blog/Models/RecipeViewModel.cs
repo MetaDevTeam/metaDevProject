@@ -29,6 +29,8 @@ namespace Blog.Models
 
         public List<RecipeCategory> RecipeCategories { get; set; }
 
+        public virtual ICollection<File> Files { get; set; }
+
         public string Ingredients { get; set; }
     }
 }

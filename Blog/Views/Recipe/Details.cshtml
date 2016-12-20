@@ -12,8 +12,14 @@
                 <h2>
                     @Model.Title
                 </h2>
-                <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-009.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-009.jpg" /><span></span></a>
-                <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-007.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-007.jpg" /><span></span></a>
+
+                @if (Model.ImagePath != null)
+                {
+                    <div>
+                        <img src="@Model.ImagePath" alt="avatar" />
+                    </div>
+                }
+
                 <h3>Ingredients</h3>
                 <ul class="ingredients">
                     @foreach (var ingredient in Model.Ingredients)
@@ -31,8 +37,9 @@
                         <li>@Html.ActionLink(tag.Name, "ListArticlesByTag", "RecipeTag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
                     }
                 </ul>
-                <footer class="pull-right">
-                    @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
+                
+        <footer class="pull-right">
+            @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
             {
                         @Html.ActionLink("Edit", "Edit", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
                         @Html.ActionLink("Delete", "Delete", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })

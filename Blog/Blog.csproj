@@ -202,6 +202,7 @@
     <Compile Include="Controllers\Admin\RecipeCategoryController.cs" />
     <Compile Include="Controllers\Admin\UserController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -212,6 +213,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612201505184_Files.cs" />
+    <Compile Include="Migrations\201612201505184_Files.Designer.cs">
+      <DependentUpon>201612201505184_Files.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -220,6 +225,8 @@
     <Compile Include="Models\BlogDbContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\EditUserViewModel.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
@@ -233,6 +240,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Blog-20161201083030.mdf" />
+    <Content Include="App_Data\aspnet-Blog-20161201083030_log.ldf">
+      <DependentUpon>aspnet-Blog-20161201083030.mdf</DependentUpon>
+    </Content>
     <Content Include="Blog-Design\about.html" />
     <Content Include="Blog-Design\categorylist.html" />
     <Content Include="Blog-Design\Contact.html" />
@@ -355,6 +366,7 @@
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\File\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Ingredient\" />
   </ItemGroup>
@@ -365,6 +377,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612201505184_Files.resx">
+      <DependentUpon>201612201505184_Files.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -59,6 +59,8 @@ namespace Blog.Models
             set { this.recipeTags = value; }
         }
 
+        public string ImagePath { get; set; }
+
         public virtual ICollection<Ingredient> Ingredients
         {
             get { return this.ingredients; }

@@ -28,6 +28,8 @@ namespace Blog.Models
 
         public virtual IDbSet<Ingredient> Ingredients { get; set; }
 
+        public DbSet<File> Files { get; set; }
+
         public static BlogDbContext Create()
         {
             return new BlogDbContext();
