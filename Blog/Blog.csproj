@@ -235,6 +235,7 @@
   <ItemGroup>
     <Content Include="Blog-Design\about.html" />
     <Content Include="Blog-Design\categorylist.html" />
+    <Content Include="Blog-Design\Contact.html" />
     <Content Include="Blog-Design\createnewpost.html" />
     <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
@@ -259,6 +260,7 @@
     <Content Include="Content\media.css" />
     <Content Include="Content\navigation.css" />
     <Content Include="Content\responsive-nav.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\typography.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
