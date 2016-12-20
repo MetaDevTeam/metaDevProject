@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Blog-Design\about.html" />
+    <Content Include="Blog-Design\Contact.html" />
     <Content Include="Blog-Design\createnewpost.html" />
     <Content Include="Blog-Design\article.html" />
     <Content Include="Blog-Design\index.html" />
@@ -255,6 +256,7 @@
     <Content Include="Content\media.css" />
     <Content Include="Content\navigation.css" />
     <Content Include="Content\responsive-nav.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\typography.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -331,7 +333,7 @@
     <Content Include="Views\Home\ListCategories.cshtml" />
     <Content Include="Views\Home\ListArticles.cshtml" />
     <Content Include="Views\Tag\ListArticlesByTag.cshtml" />
-	<Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Recipe\Create.cshtml" />
     <Content Include="Views\Recipe\Delete.cshtml" />
     <Content Include="Views\Recipe\Details.cshtml" />
     <Content Include="Views\Recipe\Edit.cshtml" />
@@ -342,7 +344,7 @@
     <Content Include="Views\RecipeCategory\Delete.cshtml" />
     <Content Include="Views\RecipeCategory\Edit.cshtml" />
     <Content Include="Views\RecipeCategory\List.cshtml" />
-	<Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
