@@ -64,6 +64,7 @@ article footer .pull-right {float: right; margin-right: 2em;}
 .article-wrapper ul {padding-bottom: 0;}
 .article-wrapper ol li.instruction {margin-left: 2em;}
 .article-wrapper ol li {padding-bottom: 1em;}
+ul.tags {list-style: none}
 
 
 /*------SIDEBAR-----*/
