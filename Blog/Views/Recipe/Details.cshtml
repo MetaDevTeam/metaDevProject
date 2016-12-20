@@ -4,33 +4,34 @@
 }
 <div class="content">
     <div class="inner">
-        <article>
-            <header>
-                <h3>
+        <div class="article-wrapper">
+            <article>
+                <small class="author">
+                    <span>by</span> @Model.Author.FullName
+                </small>
+                <h2>
                     @Model.Title
-                </h3>
-            </header>
-            <img src="~/Content/Images/Recipes/Thanksgiving-009.jpg" />
-            <p>
-                @Model.Content
-            </p>
-            <ul class="tags">
-                @foreach (var tag in Model.RecipeTags)
-                {
-                    <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
-                }
-            </ul>
-            <small class="author">
-                --author @Model.Author.FullName
-            </small>
-            <footer class="pull-right">
-                @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
+                </h2>
+                <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-009.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-009.jpg" /><span></span></a>
+                <a class="fancybox" rel="group" href="~/Content/Images/Recipes/Thanksgiving-007.jpg"><img src="~/Content/Images/Recipes/Thanksgiving-007.jpg" /><span></span></a>
+                <p>
+                    @Model.Content
+                </p>
+                <ul class="tags">
+                    @foreach (var tag in Model.RecipeTags)
+                    {
+                        <li>@Html.ActionLink(tag.Name, "ListRecipesByTag", "Tag", new { @id = tag.Id }, new { @class = "tag-article tag" })</li>
+                    }
+                </ul>
+                <footer class="pull-right">
+                    @if (User.IsInRole("Admin") || Model.IsAuthor(User.Identity.Name))
             {
-                    @Html.ActionLink("Edit", "Edit", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
-                    @Html.ActionLink("Delete", "Delete", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
-                }
-                @Html.ActionLink("Back", "Index", "Recipe", null, new { @class = "btn btn-default btn-xs" })
-            </footer>
-        </article>
+                        @Html.ActionLink("Edit", "Edit", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
+                        @Html.ActionLink("Delete", "Delete", "Recipe", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+                    }
+                    @Html.ActionLink("Back", "Index", "Recipe", null, new { @class = "btn btn-default btn-xs" })
+                </footer>
+            </article>
+        </div>
     </div>
 </div>
