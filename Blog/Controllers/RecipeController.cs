@@ -46,9 +46,12 @@ namespace Blog.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            using (var database = new BlogDbContext())
+            using (var db = new BlogDbContext())
             {
-                var recipe = database.Recipes
+                Recipe recipeFile = db.Recipes.Include(s => s.Files)
+                    .SingleOrDefault(s => s.Id == id);
+
+                var recipe = db.Recipes
                     .Where(a => a.Id == id)
                     .Include(a => a.Author)
                     .Include(a => a.RecipeTags)
@@ -82,12 +85,26 @@ namespace Blog.Controllers
         //POST: Recipe/Create
         [HttpPost]
         [Authorize]
-        public ActionResult Create(RecipeViewModel model)
+        public ActionResult Create(RecipeViewModel model, Recipe recipeFile, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new BlogDbContext())
                 {
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        var avatar = new File
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.Avatar,
+                            ContentType = upload.ContentType
+                        };
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            avatar.Content = reader.ReadBytes(upload.ContentLength);
+                        }
+                        recipeFile.Files = new List<File> { avatar };
+                    }
                     //Get Author id
                     var authorId = db.Users
                         .Where(u => u.UserName == this.User.Identity.Name)
@@ -105,6 +122,7 @@ namespace Blog.Controllers
                     recipe.AuthorId = authorId;
 
                     //Save recipe in DB
+                    db.Recipes.Add(recipeFile);
                     db.Recipes.Add(recipe);
                     db.SaveChanges();
 

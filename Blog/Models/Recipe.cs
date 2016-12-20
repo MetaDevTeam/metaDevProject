@@ -55,5 +55,7 @@ namespace Blog.Models
             get { return this.recipeTags; }
             set { this.recipeTags = value; }
         }
+
+        public virtual ICollection<File> Files { get; set; }
     }
 }

@@ -5,12 +5,21 @@
 }
 
 <div class="container">
-    <article>
+    <div>
         <header>
             <h2>
                 @Model.Title
             </h2>
         </header>
+        @if (Model.Files.Any(f => f.FileType == Blog.Models.FileType.Avatar))
+        {
+            <dt>
+                Avatar
+            </dt>
+            <dd>
+                <img src="~/File?id=@Model.Files.First(f => f.FileType == Blog.Models.FileType.Avatar).FileId" alt="avatar" />
+            </dd>
+        }
         <p>
             @Model.Content
         </p>
@@ -25,6 +34,6 @@
             }
             @Html.ActionLink("Back", "Index", "Recipe", null, new { @class = "btn btn-default btn-xs" })
         </footer>
-    </article>
+    </div>
 </div>
 <hr />
