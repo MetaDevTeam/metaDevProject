@@ -22,9 +22,32 @@ namespace Blog.Controllers
             using (var db = new BlogDbContext())
             {
                 // Get article from database
-                var articles = db.Tags
-                    .Include(t => t.Articles.Select(a => a.Tags))
-                    .Include(t => t.Articles.Select(a => a.Author))
+                var articles = db.RecipeTags
+                    .Include(t => t.Recipes.Select(a => a.RecipeTags))
+                    .Include(t => t.Recipes.Select(a => a.Author))
+                    .FirstOrDefault(t => t.Id == id)
+                    .Recipes
+                    .ToList();
+
+                // Return the view
+                return View(articles);
+            }
+        }
+
+        // GET: Tag
+        public ActionResult ListRecipesByTag(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            using (var db = new BlogDbContext())
+            {
+                // Get article from database
+                var recipes = db.Tags
+                    .Include(r => r.Articles.Select(a => a.Tags))
+                    .Include(r => r.Articles.Select(a => a.Author))
                     .FirstOrDefault(t => t.Id == id)
                     .Articles
                     .ToList();

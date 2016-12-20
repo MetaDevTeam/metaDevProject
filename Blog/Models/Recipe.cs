@@ -10,10 +10,12 @@ namespace Blog.Models
     public class Recipe
     {
         private ICollection<RecipeTag> recipeTags;
+        private ICollection<Ingredient> ingredients;
 
         public Recipe()
         {
             this.recipeTags = new HashSet<RecipeTag>();
+            this.ingredients = new HashSet<Ingredient>();
         }
 
         public Recipe(string authorId, string title, string context, int recipeCategoryId)
@@ -23,6 +25,7 @@ namespace Blog.Models
             this.Content = context;
             this.RecipeCategoryId = recipeCategoryId;
             this.recipeTags = new HashSet<RecipeTag>();
+            this.ingredients = new HashSet<Ingredient>();
         }
 
         [Key]
@@ -54,6 +57,12 @@ namespace Blog.Models
         {
             get { return this.recipeTags; }
             set { this.recipeTags = value; }
+        }
+
+        public virtual ICollection<Ingredient> Ingredients
+        {
+            get { return this.ingredients; }
+            set { this.ingredients = value; }
         }
     }
 }

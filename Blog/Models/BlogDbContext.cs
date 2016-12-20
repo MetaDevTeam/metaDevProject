@@ -26,6 +26,8 @@ namespace Blog.Models
 
         public virtual IDbSet<RecipeTag> RecipeTags { get; set; }
 
+        public virtual IDbSet<Ingredient> Ingredients { get; set; }
+
         public static BlogDbContext Create()
         {
             return new BlogDbContext();
