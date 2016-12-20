@@ -274,3 +274,20 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+/Blog/Views/About/Index.cshtml
+/Blog/Content/style.css
+/Blog/Content/Images/Recipes/WxgNrZSYri4cOtDqiAg8.jpg
+/Blog/Content/Images/Recipes/WP9GdT3D8iE2FZc5N8XA.jpg
+/Blog/Content/Images/Recipes/Thanksgiving-007.jpg
+/Blog/Content/Images/Recipes/SPvx3PqcLcWYTN7Avv0L.jpg
+/Blog/Content/Images/Recipes/e1fsxfIa2RXqTFcSpTVH.jpg
+/Blog/Content/Images/Recipes/2.jpg
+/Blog/Content/admin-user-panel.css
+/Blog/Blog-Design/Contact.html
+/Blog/Blog-Design/categorylist.html
+/Blog/Blog-Design/about.html
+/Blog/Models/UserViewModel.cs
+/Blog/Models/Ingredient.cs
+/Blog/Controllers/IngredientsController.cs
+/Blog/Controllers/ContactController.cs
+/Blog/Controllers/AboutController.cs
