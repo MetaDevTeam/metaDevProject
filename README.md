@@ -10,7 +10,7 @@ We are Zlatyo, Yulia, Mitko, Pavlin, and Ivanka - each one having his particular
 * __ZLATYO__ created the master branch and implemented the Razor code to integrate the html design into a working website.
 * The skin and the html design of the blog is a brainchild of __YUILIA__ who created original styles ignoring the bootsrap ready-to-use templates.
 * __MITKO__ had his invaluable contribution to the development of the backend - implemented the image upload and recipes object.
-* __PAVLIN__ implemented the Contact form and the functionality of the About section (and controllers controllers for listing only admin profiles), an alternative, moder and complex design that did not get to the repository.
+* __PAVLIN__ implemented the Contact form and the functionality of the About section (and controllers for listing only admin profiles), an alternative, modern and complex design that did not get to the repository.
 * __IVANKA__ prepared the main documentation related to the blog content, as well as lent a helping hand for the integration of some of the views.
 
 ## The Eat at home blog
