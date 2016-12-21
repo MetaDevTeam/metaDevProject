@@ -180,7 +180,7 @@ namespace Blog.Controllers
                 }
 
                 ViewBag.TagsString = string.Join(", ", recipe.RecipeTags.Select(t => t.Name));
-                ViewBag.IngredientsStrings = string.Join(", ", recipe.Ingredients.Select(i => i.Name));
+                ViewBag.IngredientsStrings = string.Join(",", recipe.Ingredients.Select(i => i.Name));
 
                 //Check if recipe exists
                 if (recipe == null)
@@ -264,7 +264,7 @@ namespace Blog.Controllers
 
                 model.RecipeTags = string.Join(", ", recipe.RecipeTags.Select(t => t.Name));
 
-                model.Ingredients = string.Join(", ", recipe.Ingredients.Select(i => i.Name));
+                model.Ingredients = string.Join(",", recipe.Ingredients.Select(i => i.Name));
 
                 //Pass the view model to view
                 return View(model);
@@ -337,7 +337,7 @@ namespace Blog.Controllers
         {
             // Split ingredients
             var ingredientsStrings = model.Ingredients
-                .Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .Split(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries)
                 .Select(i => i.ToLower())
                 .Distinct();
 

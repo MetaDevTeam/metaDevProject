@@ -5,7 +5,7 @@
 
 <div class="content">
     <div class="inner">
-        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "compact", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("")
@@ -39,10 +39,10 @@
                 @Html.LabelFor(m => m.RecipeTags)
                 @Html.TextBoxFor(m => m.RecipeTags)
             </p>
-            <p class="buttons">
+            <div class="buttons">
                 @Html.ActionLink("Cancel", "Index", "Recipe", null, new { @class = "button" })
                 <input type="submit" value="Create" class="button" />
-            </p>
+            </div>
         }
     </div>
 </div>
