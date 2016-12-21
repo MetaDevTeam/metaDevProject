@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace Blog.Controllers
 {
-    [Authorize]
     public class ArticleController : Controller
     {
 
@@ -118,6 +117,7 @@ namespace Blog.Controllers
 
         //
         //GET: Article/Delete
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -155,6 +155,7 @@ namespace Blog.Controllers
         //POST: Article/Delete
         [HttpPost]
         [ActionName("Delete")]
+        [Authorize]
         public ActionResult DeleteConfirmed(int? id)
         {
             if (id == null)
@@ -185,6 +186,7 @@ namespace Blog.Controllers
         }
 
         //GET: Article/Edit
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -229,6 +231,7 @@ namespace Blog.Controllers
 
         //POST: Article/Edit
         [HttpPost]
+        [Authorize]
         public ActionResult Edit(ArticleViewModel model)
         {
             //Check if model state is valid
