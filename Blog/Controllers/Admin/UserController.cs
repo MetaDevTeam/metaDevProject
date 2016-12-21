@@ -175,6 +175,14 @@ namespace Blog.Controllers.Admin
                     db.Articles.Remove(article);
                 }
 
+                var userRecipes = db.Recipes
+                    .Where(a => a.Author.Id == user.Id);
+
+                foreach (var recipe in userRecipes)
+                {
+                    db.Recipes.Remove(recipe);
+                }
+
                 db.Users.Remove(user);
                 db.SaveChanges();
 
