@@ -159,6 +159,7 @@ namespace Blog.Controllers
 
         //
         //GET: Recipe/Delete
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -196,6 +197,7 @@ namespace Blog.Controllers
         //
         //POST: Recipe/Delete
         [HttpPost]
+        [Authorize]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int? id)
         {
@@ -227,6 +229,7 @@ namespace Blog.Controllers
         }
 
         //GET: Recipe/Edit
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -273,6 +276,7 @@ namespace Blog.Controllers
 
         //POST: Recipe/Edit
         [HttpPost]
+        [Authorize]
         public ActionResult Edit(RecipeViewModel model)
         {
             //Check if model state is valid
