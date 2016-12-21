@@ -16,8 +16,10 @@
                 @if (Model.ImagePath != null)
                 {
                     <div>
-                        <img src="@Model.ImagePath" alt="avatar" />
-                    </div>
+                        <a class="fancybox" rel="group" href="@Model.ImagePath">
+                            <img src="@Model.ImagePath" alt="avatar" />
+                        </a>
+</div>
                 }
 
                 <h3>Ingredients</h3>
