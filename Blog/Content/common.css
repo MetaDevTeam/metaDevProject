@@ -198,6 +198,14 @@ article footer .pull-right {float: right; margin-right: 2em;}
 	border-top: 1px solid #ccc;
 }
 
+/* Upload Image Button */
+#upload-image{
+    width: 40%;
+    float: right;
+    margin-right: 27%;
+    border: none;
+    box-shadow: none;
+}
 
 
 
